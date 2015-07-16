@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 	public static final String MY_STRING_EXTRA = "myStringExtra";
 	public static final String MY_DATE_EXTRA = "myDateExtra";
 	public static final String MY_INT_EXTRA = "myIntExtra";
-	
+	     
 	@ViewById
 	Button test1,test2,test3;
 	

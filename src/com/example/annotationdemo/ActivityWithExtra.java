@@ -21,7 +21,7 @@ public class ActivityWithExtra extends Activity {
 	public static final String MY_STRING_EXTRA = "myStringExtra";
 	public static final String MY_DATE_EXTRA = "myDateExtra";
 	public static final String MY_INT_EXTRA = "myIntExtra";
-
+          
 	@ViewById
 	TextView extraTextView;
 

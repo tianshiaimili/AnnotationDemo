@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
 	@Click
 	void test1(){
 		
-		Intent intent = new Intent(this,PersonListActivity_.class);
+		Intent intent = new Intent(this,ChoiceInterest_.class);
 		startActivity(intent);
 		
 	}

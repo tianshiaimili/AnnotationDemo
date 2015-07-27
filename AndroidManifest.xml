@@ -26,6 +26,8 @@
         <activity android:name=".PersonListActivity_"></activity>
         <activity android:name=".ActivityWithExtra_"></activity>
         <activity android:name=".PersonFragment_"></activity>
+        <activity android:name=".ChoiceInterest_"></activity>
+        
         
         
     </application>

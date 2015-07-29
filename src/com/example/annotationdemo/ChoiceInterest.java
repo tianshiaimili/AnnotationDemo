@@ -130,11 +130,15 @@ class InterestAdapter extends BaseAdapter{
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if(isChecked){
-					ViewHolder  viewHolder = (ViewHolder) buttonView.getTag();
-					LogUtils.d("#viewHolder= "+viewHolder);
+//					ViewHolder  viewHolder = (ViewHolder) buttonView.getTag();
+//					LogUtils.d("#viewHolder= "+viewHolder);
 					LogUtils.e("buttonView--"+buttonView+"  || id = "+buttonView.getId());
 //					LogUtils.d("tag = "+viewHolder.checkBox.getId());
 					
+					
+				}else {
+					
+					LogUtils.i("buttonView--"+buttonView+"  || id = "+buttonView.getId());
 					
 				}
 				

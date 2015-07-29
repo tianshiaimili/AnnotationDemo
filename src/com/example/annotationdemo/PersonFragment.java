@@ -71,7 +71,7 @@ public class PersonFragment extends Activity{
     	
     	FragmentManager manager  = getFragmentManager();
     	FragmentTransaction transaction = manager.beginTransaction();
-    	transaction.replace(R.id.myFragment, new ThreeFragment_.FragmentBuilder_().anotherStringArgument("From PersonFragment.").myMessage("这个是设置FragmentArg的参数传递").build());
+    	transaction.replace(R.id.myFragment, new ThreeFragment_.FragmentBuilder_().anotherStringArgument("From PersonFragment.").myMessage("杩欎釜鏄缃瓼ragmentArg鐨勫弬鏁颁紶閫�").build());
     	transaction.commit();
     }
     

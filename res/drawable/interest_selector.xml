@@ -44,9 +44,9 @@
     <item><shape>
             <solid android:color="#FFFFBD00" />
 
-            <stroke android:width="2dp" android:color="#FFFFFF" />
+            <stroke android:width="2dp" android:color="#CCCCCC" />
 
-            <gradient android:endColor="#339933" android:gradientRadius="50" android:startColor="#339933" android:type="linear" />
+            <gradient android:endColor="#FFFFFF" android:gradientRadius="50" android:startColor="#FFFFFF" android:type="linear" />
 
             <corners android:bottomLeftRadius="5dp" android:bottomRightRadius="5dp" android:topLeftRadius="5dp" android:topRightRadius="5dp" />
         </shape></item>

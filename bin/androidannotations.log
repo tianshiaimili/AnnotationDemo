@@ -1597,3 +1597,317 @@
 00:51:18.399 [Worker-30] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.view.PersonItemView_
 00:51:18.401 [Worker-30] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 222 ms], [Generate Sources = 150 ms], [Process Annotations = 42 ms], [Extract Annotations = 13 ms], [Validate Annotations = 7 ms], [Find R Classes = 6 ms], [Extract Manifest = 2 ms], 
 00:51:18.401 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:31:25.816 [Worker-12] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:31:25.884 [Worker-12] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 15 annotations on 19 elements
+09:31:25.885 [Worker-12] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:31:25.885 [Worker-12] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:31:25.900 [Worker-12] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:31:25.900 [Worker-12] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:31:25.900 [Worker-12] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:31:25.900 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:31:25.917 [Worker-12] WARN  o.a.h.AnnotationHelper:128 - The component InterestActivity_ is not registered in the AndroidManifest.xml file.
+09:31:25.917 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:31:25.919 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:31:25.919 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:31:25.920 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title_tv, lastNameView, personList, test1, gridview, sure_tv, test3, test2, cancel_tv, gridview, extraTextView, title_tv, cancel_tv, firstNameView, personList, sure_tv]
+09:31:25.923 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentByIdHandler: [myFragment]
+09:31:25.924 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void test1() , void test3() , void test2() ]
+09:31:25.926 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) , void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:31:25.927 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [titles, testTitles]
+09:31:25.929 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentArgHandler: [anotherStringArgument, myMessage]
+09:31:25.931 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, finder, adapter, adapter]
+09:31:25.931 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHandler: [context]
+09:31:25.934 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [myDate, classCastExceptionExtra, classCastExceptionExtra, unboundExtra, myMessage]
+09:31:25.934 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() , void afterInjectMethod() , void initAdapter() , void afterInjectMethod() , void initVariable() , void afterInjectMethod() ]
+09:31:25.935 [Worker-12] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void bindAdapter() , void initViews() , void AfterViewsMethod() , protected void init() , void bindAdapter() , void AfterViewsMethod() , void AfterViewsMethod() , void initViews() ]
+09:31:25.942 [Worker-12] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:31:25.943 [Worker-12] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:31:25.968 [Worker-12] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:31:25.970 [Worker-12] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:31:25.972 [Worker-12] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:31:25.975 [Worker-12] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:31:25.984 [Worker-12] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 11
+09:31:25.986 [Worker-12] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:31:25.988 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ActivityWithExtra_
+09:31:25.997 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+09:31:25.999 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.InterestActivity_
+09:31:26.3 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.MainActivity_
+09:31:26.5 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonFragment_
+09:31:26.6 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonListActivity_
+09:31:26.9 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.adapter.PersonListAdapter_
+09:31:26.10 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.MyFragment_
+09:31:26.12 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.ThreeFragment_
+09:31:26.14 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.view.PersonItemView_
+09:31:26.16 [Worker-12] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.impl.InMemoryPersonFinder_
+09:31:26.18 [Worker-12] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 134 ms], [Process Annotations = 49 ms], [Validate Annotations = 35 ms], [Generate Sources = 34 ms], [Extract Annotations = 0 ms], [Extract Manifest = 0 ms], [Find R Classes = 0 ms], 
+09:31:26.18 [Worker-12] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:32:02.102 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:32:09.929 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:32:09.929 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 6 annotations on 2 elements
+09:32:09.929 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:32:09.945 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:32:09.945 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:32:09.945 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:32:09.945 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.PersonFragment]
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [personList]
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentByIdHandler: [myFragment]
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, adapter]
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void bindAdapter() ]
+09:32:09.945 [Worker-5] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:32:09.945 [Worker-5] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.PersonFragment]
+09:32:09.945 [Worker-5] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:32:09.945 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+09:32:09.945 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:32:09.961 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonFragment_
+09:32:09.963 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 34 ms], [Generate Sources = 18 ms], [Extract Manifest = 16 ms], [Extract Annotations = 0 ms], [Find R Classes = 0 ms], [Validate Annotations = 0 ms], [Process Annotations = 0 ms], 
+09:32:09.963 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:32:18.347 [Worker-10] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:32:18.414 [Worker-10] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 14 annotations on 29 elements
+09:32:18.417 [Worker-10] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:32:18.417 [Worker-10] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:32:18.434 [Worker-10] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:32:18.437 [Worker-10] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:32:18.448 [Worker-10] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:32:18.448 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity]
+09:32:18.451 [Worker-10] WARN  o.a.h.AnnotationHelper:128 - The component InterestActivity_ is not registered in the AndroidManifest.xml file.
+09:32:18.451 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:32:18.452 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:32:18.453 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:32:18.454 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title_tv, sure_tv, gridview, sure_tv, lastNameView, test3, cancel_tv, gridview, test1, test2, extraTextView, title_tv, personList, firstNameView, cancel_tv]
+09:32:18.456 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void test3() , void test2() , void test1() ]
+09:32:18.459 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:32:18.460 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [titles, testTitles]
+09:32:18.461 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentArgHandler: [myMessage, anotherStringArgument]
+09:32:18.462 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, adapter]
+09:32:18.463 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHandler: [context]
+09:32:18.464 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [unboundExtra, classCastExceptionExtra, classCastExceptionExtra, myDate, myMessage]
+09:32:18.464 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void afterInjectMethod() , void afterInjectMethod() , void initVariable() , void afterInjectMethod() , void initAdapter() , void initVariable() ]
+09:32:18.465 [Worker-10] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void initViews() , void initViews() , protected void init() , void AfterViewsMethod() , void bindAdapter() , void AfterViewsMethod() , void AfterViewsMethod() ]
+09:32:18.472 [Worker-10] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:32:18.473 [Worker-10] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity]
+09:32:18.496 [Worker-10] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:32:18.499 [Worker-10] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:32:18.501 [Worker-10] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:32:18.505 [Worker-10] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:32:18.505 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ViewByIdHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6284b025, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6f1e8f5f, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5ab10372, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1c4b53ac, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@49ec112b, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@116de624, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@292a4621, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1cd3ab3e, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1e4ce8a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@141fb82d, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@4ec6279f, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1ea2d0fb, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@4819f0a3, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@60640638, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@23b42be8, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@404ebb93]
+09:32:18.508 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with FragmentByIdHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2dd7e6cb]
+09:32:18.508 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ClickHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@18864596, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@448d7ef8, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@609c0d83]
+09:32:18.509 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ItemClickHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7a5cc30b, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@52ff9573]
+09:32:18.510 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ResHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6ee8deb9, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@29ece195]
+09:32:18.510 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with FragmentArgHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@15e3d654, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@493a5f46]
+09:32:18.512 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with BeanHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1a18f60a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@11cb091f, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7b6cd, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@10ce1615]
+09:32:18.512 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with RootContextHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2173b03d]
+09:32:18.513 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ExtraHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@b609f02, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@32e910fc, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5a7c798a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6bcc576, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6a2eee23]
+09:32:18.515 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with AfterInjectHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@3565cc26, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@146815bc, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@709637d, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@47fe257a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5637bd3b, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@3c021d8f]
+09:32:18.516 [Worker-10] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with AfterViewsHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@69b5a1a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2ca339f1, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@53926ad1, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@47930064, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@41b3bc9b, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5a7989e3, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1c7673db, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@3b488ce7]
+09:32:18.517 [Worker-10] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 10
+09:32:18.519 [Worker-10] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:32:18.521 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ActivityWithExtra_
+09:32:18.534 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+09:32:18.539 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.InterestActivity_
+09:32:18.545 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.MainActivity_
+09:32:18.552 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonListActivity_
+09:32:18.554 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.adapter.PersonListAdapter_
+09:32:18.555 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.MyFragment_
+09:32:18.557 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.ThreeFragment_
+09:32:18.563 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.view.PersonItemView_
+09:32:18.564 [Worker-10] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.impl.InMemoryPersonFinder_
+09:32:18.565 [Worker-10] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 151 ms], [Process Annotations = 52 ms], [Generate Sources = 48 ms], [Validate Annotations = 18 ms], [Find R Classes = 8 ms], [Extract Annotations = 3 ms], [Extract Manifest = 0 ms], 
+09:32:18.566 [Worker-10] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:33:00.300 [Worker-13] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:33:00.301 [Worker-13] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 15 annotations on 19 elements
+09:33:00.310 [Worker-13] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:33:00.312 [Worker-13] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:33:00.312 [Worker-13] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:33:00.313 [Worker-13] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:33:00.316 [Worker-13] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:33:00.317 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:33:00.317 [Worker-13] WARN  o.a.h.AnnotationHelper:128 - The component InterestActivity_ is not registered in the AndroidManifest.xml file.
+09:33:00.318 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:33:00.319 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:33:00.319 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:33:00.320 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [test3, title_tv, sure_tv, sure_tv, extraTextView, personList, cancel_tv, gridview, firstNameView, gridview, test2, lastNameView, test1, personList, title_tv, cancel_tv]
+09:33:00.320 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentByIdHandler: [myFragment]
+09:33:00.322 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void test1() , void test2() , void test3() ]
+09:33:00.324 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) , void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:33:00.324 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [testTitles, titles]
+09:33:00.325 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentArgHandler: [myMessage, anotherStringArgument]
+09:33:00.325 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, adapter, adapter, finder]
+09:33:00.325 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHandler: [context]
+09:33:00.325 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [myMessage, myDate, unboundExtra, classCastExceptionExtra, classCastExceptionExtra]
+09:33:00.326 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() , void initVariable() , void afterInjectMethod() , void initAdapter() , void afterInjectMethod() , void afterInjectMethod() ]
+09:33:00.326 [Worker-13] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [protected void init() , void initViews() , void initViews() , void bindAdapter() , void AfterViewsMethod() , void AfterViewsMethod() , void bindAdapter() , void AfterViewsMethod() ]
+09:33:00.330 [Worker-13] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:33:00.330 [Worker-13] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:33:00.336 [Worker-13] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:33:00.336 [Worker-13] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EBeanHandler: [com.example.annotationdemo.impl.InMemoryPersonFinder, com.example.annotationdemo.adapter.PersonListAdapter]
+09:33:00.337 [Worker-13] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:33:00.337 [Worker-13] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:33:00.340 [Worker-13] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 11
+09:33:00.341 [Worker-13] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:33:00.341 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ActivityWithExtra_
+09:33:00.346 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+09:33:00.348 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.InterestActivity_
+09:33:00.350 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.MainActivity_
+09:33:00.352 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonFragment_
+09:33:00.354 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonListActivity_
+09:33:00.356 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.adapter.PersonListAdapter_
+09:33:00.357 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.MyFragment_
+09:33:00.359 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.ThreeFragment_
+09:33:00.361 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.view.PersonItemView_
+09:33:00.363 [Worker-13] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.impl.InMemoryPersonFinder_
+09:33:00.365 [Worker-13] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 64 ms], [Generate Sources = 25 ms], [Validate Annotations = 13 ms], [Process Annotations = 11 ms], [Extract Annotations = 9 ms], [Find R Classes = 4 ms], [Extract Manifest = 2 ms], 
+09:33:00.366 [Worker-13] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:33:10.329 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:33:10.330 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 6 annotations on 2 elements
+09:33:10.336 [Worker-11] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:33:10.337 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:33:10.337 [Worker-11] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:33:10.338 [Worker-11] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:33:10.341 [Worker-11] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:33:10.341 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.PersonFragment]
+09:33:10.342 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [personList]
+09:33:10.343 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentByIdHandler: [myFragment]
+09:33:10.343 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:33:10.343 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, adapter]
+09:33:10.344 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void bindAdapter() ]
+09:33:10.344 [Worker-11] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:33:10.344 [Worker-11] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.PersonFragment]
+09:33:10.346 [Worker-11] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:33:10.347 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+09:33:10.347 [Worker-11] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:33:10.347 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonFragment_
+09:33:10.353 [Worker-11] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 23 ms], [Extract Annotations = 6 ms], [Generate Sources = 6 ms], [Find R Classes = 4 ms], [Validate Annotations = 3 ms], [Process Annotations = 3 ms], [Extract Manifest = 1 ms], 
+09:33:10.353 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+09:42:55.112 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+09:42:55.135 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 13 annotations on 19 elements
+09:42:55.144 [Worker-16] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+09:42:55.146 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+09:42:55.146 [Worker-16] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+09:42:55.147 [Worker-16] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+09:42:55.150 [Worker-16] INFO  o.a.p.ModelValidator:42 - Validating elements
+09:42:55.151 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:42:55.151 [Worker-16] WARN  o.a.h.AnnotationHelper:128 - The component InterestActivity_ is not registered in the AndroidManifest.xml file.
+09:42:55.151 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:42:55.152 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:42:55.152 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title_tv, sure_tv, test2, personList, gridview, test1, cancel_tv, test3, lastNameView, personList, firstNameView, sure_tv, gridview, title_tv, extraTextView, cancel_tv]
+09:42:55.154 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentByIdHandler: [myFragment]
+09:42:55.154 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void test2() , void test3() , void test1() ]
+09:42:55.154 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [void personListItemClicked(com.example.annotationdemo.bean.Person) , void personListItemClicked(com.example.annotationdemo.bean.Person) ]
+09:42:55.155 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [titles, testTitles]
+09:42:55.156 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with FragmentArgHandler: [myMessage, anotherStringArgument]
+09:42:55.156 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [finder, adapter, finder, adapter]
+09:42:55.156 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [classCastExceptionExtra, unboundExtra, classCastExceptionExtra, myDate, myMessage]
+09:42:55.157 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() , void afterInjectMethod() , void afterInjectMethod() , void afterInjectMethod() , void initVariable() ]
+09:42:55.157 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void AfterViewsMethod() , void initViews() , void bindAdapter() , protected void init() , void AfterViewsMethod() , void AfterViewsMethod() , void bindAdapter() , void initViews() ]
+09:42:55.157 [Worker-16] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+09:42:55.158 [Worker-16] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ActivityWithExtra, com.example.annotationdemo.PersonListActivity, com.example.annotationdemo.MainActivity, com.example.annotationdemo.ChoiceInterest, com.example.annotationdemo.InterestActivity, com.example.annotationdemo.PersonFragment]
+09:42:55.162 [Worker-16] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EFragmentHandler: [com.example.annotationdemo.fragment.ThreeFragment, com.example.annotationdemo.fragment.MyFragment]
+09:42:55.163 [Worker-16] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EViewGroupHandler: [com.example.annotationdemo.view.PersonItemView]
+09:42:55.164 [Worker-16] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+09:42:55.164 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ViewByIdHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@4c17ba15, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@d535210, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@47ec43e9, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@785a422, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@b47a50e, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6f8d71a6, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@16271f2, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5006b596, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@172a3138, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@797daa0a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7fcb6df3, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6b01a119, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@257a3ce0, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2b91e40d, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@266dd570, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2223e83e]
+09:42:55.165 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with FragmentByIdHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@613c44a]
+09:42:55.166 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ClickHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@21b965e8, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7eb2ec81, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2603eca9]
+09:42:55.166 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ItemClickHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@399132eb, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@a5e8615]
+09:42:55.166 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ResHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6d74bb6a, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@50385ad6]
+09:42:55.167 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with FragmentArgHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@4bd35ebd, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6f32b28d]
+09:42:55.167 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with BeanHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@78038b71, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5f7e45a9, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5ca4cb1, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7bd7b93]
+09:42:55.168 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with ExtraHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5eb6f6e6, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@20d470f, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1bf62e45, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@8da69c9, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@74187f73]
+09:42:55.168 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with AfterInjectHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@21021e83, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6f531251, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@eba6b1f, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@25bd30b8, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@173e14b1]
+09:42:55.169 [Worker-16] DEBUG o.a.p.ModelProcessor:98 - Processing enclosed elements with AfterViewsHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@72454585, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@5f594bdb, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2d28e0be, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1f4c01b4, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@7e610428, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@77fab970, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@6752ade8, org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@31fa6746]
+09:42:55.169 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 9
+09:42:55.169 [Worker-16] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+09:42:55.170 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ActivityWithExtra_
+09:42:55.175 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+09:42:55.183 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.InterestActivity_
+09:42:55.188 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.MainActivity_
+09:42:55.194 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonFragment_
+09:42:55.196 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.PersonListActivity_
+09:42:55.197 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.MyFragment_
+09:42:55.199 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.fragment.ThreeFragment_
+09:42:55.200 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.view.PersonItemView_
+09:42:55.204 [Worker-16] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 70 ms], [Generate Sources = 35 ms], [Process Annotations = 12 ms], [Extract Annotations = 9 ms], [Validate Annotations = 7 ms], [Find R Classes = 4 ms], [Extract Manifest = 2 ms], 
+09:42:55.204 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+10:03:59.11 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+10:03:59.12 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 5 annotations on 2 elements
+10:03:59.19 [Worker-19] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+10:03:59.21 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+10:03:59.21 [Worker-19] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+10:03:59.22 [Worker-19] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+10:03:59.25 [Worker-19] INFO  o.a.p.ModelValidator:42 - Validating elements
+10:03:59.26 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:03:59.26 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [gridview, title_tv, sure_tv, cancel_tv]
+10:03:59.27 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [testTitles]
+10:03:59.28 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() ]
+10:03:59.28 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void initViews() ]
+10:03:59.29 [Worker-19] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+10:03:59.29 [Worker-19] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:03:59.31 [Worker-19] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+10:03:59.32 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+10:03:59.32 [Worker-19] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+10:03:59.32 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+10:03:59.40 [Worker-19] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 28 ms], [Generate Sources = 8 ms], [Extract Annotations = 7 ms], [Find R Classes = 4 ms], [Process Annotations = 4 ms], [Validate Annotations = 3 ms], [Extract Manifest = 2 ms], 
+10:03:59.40 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+10:04:01.197 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+10:04:01.198 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 5 annotations on 3 elements
+10:04:01.204 [Worker-23] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+10:04:01.205 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+10:04:01.206 [Worker-23] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+10:04:01.206 [Worker-23] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+10:04:01.209 [Worker-23] INFO  o.a.p.ModelValidator:42 - Validating elements
+10:04:01.209 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:04:01.210 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title_tv, sure_tv, cancel_tv, gridview]
+10:04:01.211 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [testTitles]
+10:04:01.212 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() ]
+10:04:01.212 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void initViews() ]
+10:04:01.213 [Worker-23] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+10:04:01.213 [Worker-23] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:04:01.215 [Worker-23] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+10:04:01.216 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+10:04:01.217 [Worker-23] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+10:04:01.217 [Worker-23] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+10:04:01.222 [Worker-23] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 24 ms], [Generate Sources = 6 ms], [Extract Annotations = 5 ms], [Validate Annotations = 4 ms], [Find R Classes = 3 ms], [Process Annotations = 3 ms], [Extract Manifest = 1 ms], 
+10:04:01.223 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+10:19:47.176 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+10:19:47.177 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 5 annotations on 2 elements
+10:19:47.184 [Worker-28] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+10:19:47.186 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+10:19:47.187 [Worker-28] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+10:19:47.188 [Worker-28] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+10:19:47.192 [Worker-28] INFO  o.a.p.ModelValidator:42 - Validating elements
+10:19:47.192 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:19:47.193 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title_tv, gridview, sure_tv, cancel_tv]
+10:19:47.194 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [testTitles]
+10:19:47.195 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() ]
+10:19:47.195 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void initViews() ]
+10:19:47.195 [Worker-28] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+10:19:47.196 [Worker-28] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:19:47.198 [Worker-28] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+10:19:47.199 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+10:19:47.199 [Worker-28] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+10:19:47.199 [Worker-28] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+10:19:47.205 [Worker-28] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 28 ms], [Extract Annotations = 6 ms], [Generate Sources = 6 ms], [Find R Classes = 5 ms], [Process Annotations = 4 ms], [Validate Annotations = 3 ms], [Extract Manifest = 2 ms], 
+10:19:47.206 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+10:19:54.746 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}
+10:19:54.747 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:107 - Start processing for 5 annotations on 2 elements
+10:19:54.753 [Worker-28] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo: D:\WorkSoftwareTool\NowEclipse\GitHubProject\AnnotationDemo\AndroidManifest.xml
+10:19:54.755 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:170 - AndroidManifest.xml found: AndroidManifest [applicationPackage=com.example.annotationdemo, componentQualifiedNames=[com.example.annotationdemo.MainActivity_, com.example.annotationdemo.PersonListActivity_, com.example.annotationdemo.ActivityWithExtra_, com.example.annotationdemo.PersonFragment_, com.example.annotationdemo.ChoiceInterest_], permissionQualifiedNames=[], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=16, maxSdkVersion=-1, targetSdkVersion=19]
+10:19:54.755 [Worker-28] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: com.example.annotationdemo.R
+10:19:54.756 [Worker-28] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+10:19:54.759 [Worker-28] INFO  o.a.p.ModelValidator:42 - Validating elements
+10:19:54.760 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:19:54.760 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [cancel_tv, sure_tv, gridview, title_tv]
+10:19:54.762 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with ResHandler: [testTitles]
+10:19:54.763 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with AfterInjectHandler: [void initVariable() ]
+10:19:54.764 [Worker-28] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void initViews() ]
+10:19:54.764 [Worker-28] INFO  o.a.p.ModelProcessor:74 - Processing root elements
+10:19:54.764 [Worker-28] DEBUG o.a.p.ModelProcessor:176 - Processing root elements EActivityHandler: [com.example.annotationdemo.ChoiceInterest]
+10:19:54.767 [Worker-28] INFO  o.a.p.ModelProcessor:86 - Processing enclosed elements
+10:19:54.768 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:249 - Number of files generated by AndroidAnnotations: 1
+10:19:54.768 [Worker-28] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+10:19:54.769 [Worker-28] DEBUG o.a.g.SourceCodewriter:55 - Generating class: com.example.annotationdemo.ChoiceInterest_
+10:19:54.775 [Worker-28] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 28 ms], [Generate Sources = 7 ms], [Extract Annotations = 6 ms], [Validate Annotations = 5 ms], [Find R Classes = 4 ms], [Process Annotations = 4 ms], [Extract Manifest = 2 ms], 
+10:19:54.776 [Worker-28] INFO  o.a.AndroidAnnotationProcessor:121 - Finish processing
+11:35:01.899 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:83 - Initialize AndroidAnnotations 3.3.1 with options {phase=BUILD}

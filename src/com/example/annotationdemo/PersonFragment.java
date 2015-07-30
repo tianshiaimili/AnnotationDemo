@@ -23,10 +23,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.annotationdemo.adapter.GalleryAdapter;
 import com.example.annotationdemo.adapter.GridViewAdapter;
 import com.example.annotationdemo.adapter.PersonListAdapter;
 import com.example.annotationdemo.bean.Person;
@@ -43,9 +45,19 @@ import com.example.annotationdemo.view.CustomGridView;
  */
 @EActivity(R.layout.person_list)
 public class PersonFragment extends Activity {
+	
+	private int[] imageId = new int[]{
+			R.drawable.bg01,R.drawable.bg02,R.drawable.bg03,
+			R.drawable.bg04,R.drawable.bg05
+	};
+	
 	@ViewById
 	ListView personList;
 
+	Gallery gallery;
+	
+	GalleryAdapter galleryAdapter;
+	
 	@Bean
 	InMemoryPersonFinder finder;
 
@@ -73,6 +85,7 @@ public class PersonFragment extends Activity {
     	
     	foodViewLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.footlayout, null);
     	gridView = (CustomGridView) foodViewLayout.findViewById(R.id.gridview);
+    	gallery = (Gallery) foodViewLayout.findViewById(R.id.gallery);
     }
 	
 	@AfterViews
@@ -94,13 +107,17 @@ public class PersonFragment extends Activity {
 		}
 
 		changeListOrder(list, this);
+
+		galleryAdapter = new GalleryAdapter(this);
+		gallery.setAdapter(galleryAdapter);
+		
 		//
 		setFVAdapterData();
 		gridViewAdapter = new GridViewAdapter(this, postsNewBeans);
 		gridView.setAdapter(gridViewAdapter);
 		//
 		personList.addFooterView(foodViewLayout);
-		adapter.setData(list);
+//		adapter.setData(list);
 		personList.setAdapter(adapter);
 		// personList.setOnLongClickListener(new OnLongClickListener() {
 		//

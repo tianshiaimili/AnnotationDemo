@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:orientation="vertical" >
+              android:orientation="vertical" 
+              android:background="#FFFFFF"
+              >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,21 +22,22 @@
             android:drawablePadding="20dp"
             android:text="本地使用信息" />
 
-        <!--
-             <Gallery
+          <Gallery
             android:id="@+id/gallery"
             android:layout_width="match_parent"
-            android:layout_height="290dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/local_titles"
-            android:layout_marginTop="40dp"  />
+            android:layout_marginTop="40dp" 
+            android:unselectedAlpha="0.6"
+            android:spacing="20dp"
+             />
 
-        -->
 
         <LinearLayout
             android:id="@+id/care_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/local_titles"
+            android:layout_below="@id/gallery"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="16dp"

@@ -50,6 +50,6 @@ public class PersonListActivity extends Activity{
     @ItemClick
     void personListItemClicked(Person person) {
 //        makeText(this, person.firstName + " " + person.lastName, LENGTH_SHORT).show();
-        Toast.makeText(this, person.firstName + " " + person.lastName, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, person.getFirstName() + " " + person.getLastName(), Toast.LENGTH_SHORT).show();
     }
 }

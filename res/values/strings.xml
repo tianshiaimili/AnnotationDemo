@@ -21,4 +21,19 @@
         
     </string-array>
     
+    
+        <string-array name="other_recommend">
+        <item>烘焙德玛西亚</item>
+        <item>旅游啦啦啦</item>
+        <item>园艺</item>
+        <item>护肤</item>
+        <item>宠物</item>
+        <item>搭配</item>
+        <item>DIY</item>
+        <item>单反/摄影</item>
+        <item>小说</item>
+        <item>理财</item>
+    </string-array>
+    
+    
 </resources>

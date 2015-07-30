@@ -27,7 +27,7 @@ public class PersonItemView extends LinearLayout {
     }
 
     public void bind(Person person) {
-        firstNameView.setText(person.firstName);
-        lastNameView.setText(person.lastName);
+        firstNameView.setText(person.getFirstName());
+        lastNameView.setText(person.getLastName());
     }
 }

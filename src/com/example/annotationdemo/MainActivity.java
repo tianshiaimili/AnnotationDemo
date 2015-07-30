@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 	public static final String MY_INT_EXTRA = "myIntExtra";
 	     
 	@ViewById
-	Button test1,test2,test3;
+	Button test1,test2,test3,test4;
 	
 	
 	@Extra(MY_INT_EXTRA)
@@ -111,5 +111,15 @@ public class MainActivity extends Activity {
 		startActivity(intent);
 		
 	}
+	
+	
+	@Click
+	void test4(){
+		
+		Intent intent = new Intent(this,WebViewPlayer_.class);
+		startActivity(intent);
+		
+	}
+	
 	
 }

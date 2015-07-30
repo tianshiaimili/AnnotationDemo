@@ -70,6 +70,12 @@
         <item name="android:paddingTop">4dp</item>
     </style>
 
-
+    <style name="ProgressBarStyleLarge">
+        <item name="android:maxWidth">30.0dip</item>
+        <item name="android:maxHeight">30.0dip</item>
+        <item name="android:indeterminateDrawable">@drawable/detailloading</item>
+        <item name="android:minWidth">64.0dip</item>
+        <item name="android:minHeight">64.0dip</item>
+    </style>
     
 </resources>

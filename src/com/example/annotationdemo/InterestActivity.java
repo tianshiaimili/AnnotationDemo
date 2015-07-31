@@ -23,7 +23,7 @@ import com.example.annotationdemo.utils.LogUtils;
 import com.example.annotationdemo.view.CustomGridView;
 
 
-@EActivity(R.layout.choice_interest)
+@EActivity(R.layout.choice_interest_layout)
 public class InterestActivity extends Activity {
 	
 	@ViewById

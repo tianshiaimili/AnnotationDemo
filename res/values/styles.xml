@@ -78,4 +78,10 @@
         <item name="android:minHeight">64.0dip</item>
     </style>
     
+        <!-- 顶部字体 -->
+    <style name="style2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+    
 </resources>

@@ -1,29 +1,27 @@
 package com.example.annotationdemo;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.StringArrayRes;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Gravity;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.annotationdemo.bean.InterestBean;
-import com.example.annotationdemo.utils.LogUtils;
-import com.example.annotationdemo.view.CustomGridView;
+import com.example.annotationdemo.view.MMFlowLayout;
 
 /**
  * Created by sundh on 2015/7/27.
@@ -32,126 +30,114 @@ import com.example.annotationdemo.view.CustomGridView;
 public class ChoiceInterest  extends Activity  {
 
     @ViewById
-    TextView cancel_tv,title_tv,sure_tv;
+    TextView title_tv;
+    @ViewById
+    ImageView cancel_tv,sure_tv;
 
-    @ViewById(R.id.gridview)
-    CustomGridView gridview;
+    @ViewById(R.id.flowlayout)
+    MMFlowLayout  flowlayout;
 
-    @StringArrayRes(R.array.interest)
+    int [] colors = {R.drawable.green_big_box_selector,
+            R.drawable.blue_box_selector,
+            R.drawable.red_box_selector,
+            R.drawable.pink_box_selector,
+            R.drawable.green_big_box_selector,
+            R.drawable.grey_box_selector};
+
+//
+//    @ViewById(R.id.gridview)
+//    CustomGridView gridview;
+
+    @StringArrayRes(R.array.interest_option)
     String [] testTitles;
 
-    List<InterestBean> listBean = new ArrayList<InterestBean>();
+//    List<InterestChoiceBean> listBean = new ArrayList<>();
     InterestAdapter adapter ;
+    private final static int CANCEL_CODE = 0;
+    private final static int SURE_CODE = 200;
+
+    private Context context;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        context = getApplicationContext();
+    }
 
     @AfterInject
     void initVariable(){
 
-        for(String option : testTitles){
-        	InterestBean bean = new InterestBean();
-            bean.setName(option);
-            listBean.add(bean);
-        }
+//        TypedArray typedArray = getResources().obtainTypedArray(R.array.myfragment_item_icos);
+//        for(int i =0;i < typedArray.getIndexCount();i++){
+//            MineBean mineBean = new MineBean(i,titles[i],typedArray.getResourceId(i,R.drawable.woicon2));
+//            if(i == 0){
+//                mineBean.setMyValue(getBBType());
+//            }
+//            listData.add(mineBean);
+//        }
 
     }
 
     @AfterViews
     void initViews(){
 
-        adapter = new InterestAdapter(this,listBean);
-        gridview.setAdapter(adapter);
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                OnItemClick(listBean.get(i));
-            	InterestBean bean = (InterestBean) adapterView.getItemAtPosition(position);
-            	String id = adapterView.getItemIdAtPosition(position)+"";
-            	LogUtils.d("bean.name = "+bean.getName());
-            	LogUtils.d("bean.id = "+id);
-            	
-            	
-            }
-        });
-    }
-
-    private void OnItemClick(final InterestBean bean){
-
-
+//        adapter = new InterestAdapter(this,listBean);
+//        gridview.setAdapter(adapter);
+        initChildViews();
 
     }
 
-}
+    private void initChildViews() {
 
-class InterestAdapter extends BaseAdapter{
-
-    Context context;
-    List<InterestBean> beans;
-
-    public InterestAdapter(Context ct ,List<InterestBean> temp){
-        context = ct;
-        beans = temp;
-    }
-
-    @Override
-    public int getCount() {
-        return beans.size();
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return beans.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
-        ViewHolder viewHolder;
-        if(convertView == null){
-//            convertView = new TextView(context);//LayoutInflater.from(context).inflate(R.layout.interest_grid_item,null);
-        	convertView = LayoutInflater.from(context).inflate(R.layout.interest_item,null);
-            viewHolder = new ViewHolder();
-//            viewHolder.textView = (TextView) convertView;
-            viewHolder.checkBox = (CheckBox) convertView.findViewById(R.id.testC);
-            convertView.setTag(viewHolder);
-        }else{
-            viewHolder = (ViewHolder) convertView.getTag();
+        ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.leftMargin = 20;
+        lp.rightMargin = 20;
+        lp.topMargin = 20;
+        lp.bottomMargin = 20;
+        for(int i = 0; i < testTitles.length; i ++){
+            CheckBox view = new CheckBox(this);
+            view.setButtonDrawable(android.R.color.transparent);
+            view.setText(testTitles[i]);
+            view.setTextColor(Color.parseColor("#666666"));
+            view.setTextSize(16);
+            view.setGravity(Gravity.CENTER);
+//            view.setBackgroundDrawable(getResources().getDrawable(R.drawable.textview_bg));
+            Random random = new Random();
+            int index = random.nextInt(colors.length);
+            view.setBackgroundResource(colors[index]);
+            final String content = view.getText().toString();
+            view.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    Toast.makeText(ChoiceInterest.this, content, 300).show();
+                }
+            });
+            flowlayout.addView(view,lp);
         }
-
-//        viewHolder.textView.setText(beans.get(i).getName());
-        viewHolder.checkBox.setText(beans.get(i).getName());
-        viewHolder.checkBox.setId(i);
-//        convertView.setId(i);
-
-        viewHolder.checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-				if(isChecked){
-//					ViewHolder  viewHolder = (ViewHolder) buttonView.getTag();
-//					LogUtils.d("#viewHolder= "+viewHolder);
-					LogUtils.e("buttonView--"+buttonView+"  || id = "+buttonView.getId());
-//					LogUtils.d("tag = "+viewHolder.checkBox.getId());
-					
-					
-				}else {
-					
-					LogUtils.i("buttonView--"+buttonView+"  || id = "+buttonView.getId());
-					
-				}
-				
-			}
-		});
-        
-        return convertView;
     }
 
-    class ViewHolder{
-//        TextView textView;
-    	CheckBox checkBox;
+    @Click
+    void cancel_tv(){
+        this.setResult(CANCEL_CODE);
+        finish();
+    }
+
+    @Click
+    void sure_tv(){
+//        ArrayList<String> choiceData = adapter.getReturnData();
+//        if(choiceData.size() == 0){
+//            ToastUtil.showToast(this,"请选择兴趣先哦");
+//        }else {
+//            Intent intent = new Intent();
+////            intent.putIntegerArrayListExtra("choiceData",choiceData);
+////            intent.putCharSequenceArrayListExtra("choiceData",new ArrayList<CharSequence>());
+//            intent.putStringArrayListExtra("choiceData",choiceData);
+//            this.setResult(SURE_CODE, intent);
+//            finish();
+//        }
 
     }
 
 }
+

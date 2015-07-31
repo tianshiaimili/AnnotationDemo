@@ -23,6 +23,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.TranslateAnimation;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -72,6 +78,13 @@ public class PersonFragment extends Activity {
 	@StringArrayRes(R.array.other_recommend)
 	String[] others ;
 	
+    
+    /**这是底部显示的tab item部分 ，这里主要是想滑动listview 实现隐藏*/
+	@ViewById(R.id.bottom_layout)
+    LinearLayout bottom_layout;
+	private int buttomLayoutItemHeight;
+	private TranslateAnimation anim;
+	
 	private LinearLayout foodViewLayout;
 	private CustomGridView gridView;
 	private GridViewAdapter gridViewAdapter;
@@ -119,28 +132,73 @@ public class PersonFragment extends Activity {
 		personList.addFooterView(foodViewLayout);
 //		adapter.setData(list);
 		personList.setAdapter(adapter);
-		// personList.setOnLongClickListener(new OnLongClickListener() {
-		//
-		// @Override
-		// public boolean onLongClick(View v) {
-		// LogUtils.i("v---"+v);
-		// String [] items = {"item1","item2"};
-		// new AlertDialog.Builder(getApplicationContext())
-		// .setTitle("lalla")
-		// .setItems(items, new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(DialogInterface dialog, int which) {
-		// LogUtils.d("which --"+which);
-		// }
-		// }).show();
-		//
-		// return false;
-		// }
-		// });
+		personList.setOnScrollListener(new OnScrollListener() {
+			
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+				
+				if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
+					bottom_layout.setVisibility(View.VISIBLE);
+					anim = new TranslateAnimation(0, 0, bottom_layout.getHeight(),
+							0);
+					anim.setFillAfter(true);
+					anim.setDuration(500);
+					anim.setAnimationListener(new AnimationListener() {
+						
+						@Override
+						public void onAnimationStart(Animation animation) {
+							
+						}
+						
+						@Override
+						public void onAnimationRepeat(Animation animation) {
+							
+						}
+						
+						@Override
+						public void onAnimationEnd(Animation animation) {
+						}
+					});
+					bottom_layout.startAnimation(anim);
+				}else if(scrollState == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
+					LogUtils.d("SCROLL_STATE_TOUCH_SCROLL--");
+					bottom_layout.setVisibility(View.VISIBLE);
+					anim = new TranslateAnimation(0, 0, 0,
+							bottom_layout.getHeight());
+					anim.setFillAfter(true);
+					anim.setDuration(500);
+					anim.setAnimationListener(new AnimationListener() {
+						
+						@Override
+						public void onAnimationStart(Animation animation) {
+							
+						}
+						
+						@Override
+						public void onAnimationRepeat(Animation animation) {
+							
+						}
+						
+						@Override
+						public void onAnimationEnd(Animation animation) {
+						}
+					});
+					bottom_layout.startAnimation(anim);
+					
+				}
+			}
+			
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
+				
+			}
+		});
 
 	}
 
+	
+	
 	public void setFVAdapterData(){
 		
 		postsNewBeans = new ArrayList<PostsNewBean>();

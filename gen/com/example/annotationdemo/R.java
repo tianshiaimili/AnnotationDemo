@@ -9,11 +9,16 @@ package com.example.annotationdemo;
 
 public final class R {
     public static final class array {
-        public static final int interest=0x7f060001;
-        public static final int interest_option=0x7f060000;
-        public static final int other_recommend=0x7f060002;
+        public static final int interest=0x7f070001;
+        public static final int interest_option=0x7f070000;
+        public static final int other_recommend=0x7f070002;
     }
     public static final class attr {
+    }
+    public static final class color {
+        public static final int black=0x7f040002;
+        public static final int gray=0x7f040000;
+        public static final int gray10=0x7f040001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -23,8 +28,8 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int bg01=0x7f020000;
@@ -35,124 +40,154 @@ public final class R {
         public static final int blue_box_normal=0x7f020005;
         public static final int blue_box_press=0x7f020006;
         public static final int blue_box_selector=0x7f020007;
-        public static final int btn_return_normal=0x7f020008;
-        public static final int cancel_icon=0x7f020009;
-        public static final int concern=0x7f02000a;
-        public static final int confirm_icon=0x7f02000b;
-        public static final int detailloading=0x7f02000c;
-        public static final int detailloading_1=0x7f02000d;
-        public static final int detailloading_10=0x7f02000e;
-        public static final int detailloading_11=0x7f02000f;
-        public static final int detailloading_12=0x7f020010;
-        public static final int detailloading_13=0x7f020011;
-        public static final int detailloading_14=0x7f020012;
-        public static final int detailloading_15=0x7f020013;
-        public static final int detailloading_16=0x7f020014;
-        public static final int detailloading_2=0x7f020015;
-        public static final int detailloading_3=0x7f020016;
-        public static final int detailloading_4=0x7f020017;
-        public static final int detailloading_5=0x7f020018;
-        public static final int detailloading_6=0x7f020019;
-        public static final int detailloading_7=0x7f02001a;
-        public static final int detailloading_8=0x7f02001b;
-        public static final int detailloading_9=0x7f02001c;
-        public static final int details_discussion=0x7f02001d;
-        public static final int details_experience=0x7f02001e;
-        public static final int details_information=0x7f02001f;
-        public static final int green_big_box_normal=0x7f020020;
-        public static final int green_big_box_press=0x7f020021;
-        public static final int green_big_box_selector=0x7f020022;
-        public static final int green_box_normal=0x7f020023;
-        public static final int green_box_press=0x7f020024;
-        public static final int green_box_selector=0x7f020025;
-        public static final int grey_box_normal=0x7f020026;
-        public static final int grey_box_press=0x7f020027;
-        public static final int grey_box_selector=0x7f020028;
-        public static final int ic_launcher=0x7f020029;
-        public static final int interest=0x7f02002a;
-        public static final int interest_icon=0x7f02002b;
-        public static final int interest_selector=0x7f02002c;
-        public static final int interest_selector2=0x7f02002d;
-        public static final int jinghua_label_normal=0x7f02002e;
-        public static final int jinghua_label_press=0x7f02002f;
-        public static final int jinghua_question=0x7f020030;
-        public static final int jinghua_zuola=0x7f020031;
-        public static final int message=0x7f020032;
-        public static final int news_collect_btn_selector=0x7f020033;
-        public static final int other_option_gridview_selector=0x7f020034;
-        public static final int pink_box_normal=0x7f020035;
-        public static final int pink_box_press=0x7f020036;
-        public static final int pink_box_selector=0x7f020037;
-        public static final int red_box_normal=0x7f020038;
-        public static final int red_box_press=0x7f020039;
-        public static final int red_box_selector=0x7f02003a;
-        public static final int share_icon=0x7f02003b;
+        public static final int btn_back_selector=0x7f020008;
+        public static final int btn_return_normal=0x7f020009;
+        public static final int cancel_icon=0x7f02000a;
+        public static final int concern=0x7f02000b;
+        public static final int confirm_icon=0x7f02000c;
+        public static final int detailloading=0x7f02000d;
+        public static final int detailloading_1=0x7f02000e;
+        public static final int detailloading_10=0x7f02000f;
+        public static final int detailloading_11=0x7f020010;
+        public static final int detailloading_12=0x7f020011;
+        public static final int detailloading_13=0x7f020012;
+        public static final int detailloading_14=0x7f020013;
+        public static final int detailloading_15=0x7f020014;
+        public static final int detailloading_16=0x7f020015;
+        public static final int detailloading_2=0x7f020016;
+        public static final int detailloading_3=0x7f020017;
+        public static final int detailloading_4=0x7f020018;
+        public static final int detailloading_5=0x7f020019;
+        public static final int detailloading_6=0x7f02001a;
+        public static final int detailloading_7=0x7f02001b;
+        public static final int detailloading_8=0x7f02001c;
+        public static final int detailloading_9=0x7f02001d;
+        public static final int details_discussion=0x7f02001e;
+        public static final int details_experience=0x7f02001f;
+        public static final int details_information=0x7f020020;
+        public static final int green_big_box_normal=0x7f020021;
+        public static final int green_big_box_press=0x7f020022;
+        public static final int green_big_box_selector=0x7f020023;
+        public static final int green_box_normal=0x7f020024;
+        public static final int green_box_press=0x7f020025;
+        public static final int green_box_selector=0x7f020026;
+        public static final int grey_box_normal=0x7f020027;
+        public static final int grey_box_press=0x7f020028;
+        public static final int grey_box_selector=0x7f020029;
+        public static final int ic_launcher=0x7f02002a;
+        public static final int interest=0x7f02002b;
+        public static final int interest_icon=0x7f02002c;
+        public static final int interest_selector=0x7f02002d;
+        public static final int interest_selector2=0x7f02002e;
+        public static final int jianghua_item_bottom=0x7f02002f;
+        public static final int jinghua_label_normal=0x7f020030;
+        public static final int jinghua_label_press=0x7f020031;
+        public static final int jinghua_question=0x7f020032;
+        public static final int jinghua_zuola=0x7f020033;
+        public static final int message=0x7f020034;
+        public static final int news_collect_btn_selector=0x7f020035;
+        public static final int other_option_gridview_selector=0x7f020036;
+        public static final int pink_box_normal=0x7f020037;
+        public static final int pink_box_press=0x7f020038;
+        public static final int pink_box_selector=0x7f020039;
+        public static final int red_box_normal=0x7f02003a;
+        public static final int red_box_press=0x7f02003b;
+        public static final int red_box_selector=0x7f02003c;
+        public static final int review=0x7f02003d;
+        public static final int share_icon=0x7f02003e;
+        public static final int top_bg=0x7f02003f;
+        public static final int topbackbn=0x7f020040;
+        public static final int topbackbnon=0x7f020041;
     }
     public static final class id {
-        public static final int action_settings=0x7f09003f;
-        public static final int back_btn=0x7f09003b;
-        public static final int bottom_layout=0x7f090034;
-        public static final int cancel_tv=0x7f09000a;
-        public static final int care_layout=0x7f090012;
-        public static final int care_layout_1=0x7f090014;
-        public static final int care_layout_2=0x7f090017;
-        public static final int care_layout_3=0x7f09001a;
-        public static final int care_layout_4=0x7f09001d;
-        public static final int care_layout_5=0x7f090020;
-        public static final int care_titles=0x7f090013;
-        public static final int care_titles_1=0x7f090015;
-        public static final int care_titles_1_des=0x7f090016;
-        public static final int care_titles_2=0x7f090018;
-        public static final int care_titles_2_des=0x7f090019;
-        public static final int care_titles_3=0x7f09001b;
-        public static final int care_titles_3_des=0x7f09001c;
-        public static final int care_titles_4=0x7f09001e;
-        public static final int care_titles_4_des=0x7f09001f;
-        public static final int care_titles_5=0x7f090021;
-        public static final int care_titles_5_des=0x7f090022;
-        public static final int choice_interest=0x7f090008;
-        public static final int concern_iv=0x7f090035;
-        public static final int dialogbody=0x7f090026;
-        public static final int extraTextView=0x7f090004;
-        public static final int firstNameView=0x7f09002f;
-        public static final int flowlayout=0x7f09000e;
-        public static final int follow_tv=0x7f090038;
-        public static final int fragmentw=0x7f09002d;
-        public static final int gallery=0x7f090011;
-        public static final int gridview=0x7f09000f;
-        public static final int helloTextView=0x7f09002a;
-        public static final int interest_tip=0x7f09000d;
-        public static final int ivAddCircle=0x7f090006;
-        public static final int lastNameView=0x7f090030;
-        public static final int local_iv=0x7f090028;
-        public static final int local_titles=0x7f090010;
-        public static final int local_tv_des=0x7f090029;
-        public static final int message_iv=0x7f090037;
-        public static final int myFragment=0x7f090032;
-        public static final int option=0x7f09002e;
-        public static final int personList=0x7f090033;
-        public static final int progress_bar=0x7f09003e;
-        public static final int sendMessage_tv=0x7f090036;
-        public static final int sure_tv=0x7f09000c;
-        public static final int switch_btn=0x7f09003c;
-        public static final int test1=0x7f090000;
-        public static final int test2=0x7f090001;
-        public static final int test3=0x7f090002;
-        public static final int test4=0x7f090003;
-        public static final int testButton=0x7f09002b;
-        public static final int testButton2=0x7f09002c;
-        public static final int testC=0x7f090023;
-        public static final int testFragment=0x7f090031;
-        public static final int threefragmenttest=0x7f090039;
-        public static final int title_tv=0x7f09000b;
-        public static final int top=0x7f090009;
-        public static final int tuichu=0x7f090007;
-        public static final int tvCircleName=0x7f090024;
-        public static final int tvDesc=0x7f090025;
-        public static final int tv_dialog=0x7f090027;
-        public static final int video=0x7f09003a;
-        public static final int webview=0x7f09003d;
-        public static final int zhiding=0x7f090005;
+        public static final int action_settings=0x7f0a0057;
+        public static final int adapter_item_desc=0x7f0a002a;
+        public static final int adapter_item_sub_desc=0x7f0a002b;
+        public static final int adapter_item_sub_title=0x7f0a0029;
+        public static final int adapter_item_title=0x7f0a0028;
+        public static final int author=0x7f0a002d;
+        public static final int avatar_img=0x7f0a002c;
+        public static final int back_btn=0x7f0a0053;
+        public static final int bb_age=0x7f0a002f;
+        public static final int bottom_layout=0x7f0a004c;
+        public static final int cancel_tv=0x7f0a000b;
+        public static final int care_layout=0x7f0a0013;
+        public static final int care_layout_1=0x7f0a0015;
+        public static final int care_layout_2=0x7f0a0018;
+        public static final int care_layout_3=0x7f0a001b;
+        public static final int care_layout_4=0x7f0a001e;
+        public static final int care_layout_5=0x7f0a0021;
+        public static final int care_titles=0x7f0a0014;
+        public static final int care_titles_1=0x7f0a0016;
+        public static final int care_titles_1_des=0x7f0a0017;
+        public static final int care_titles_2=0x7f0a0019;
+        public static final int care_titles_2_des=0x7f0a001a;
+        public static final int care_titles_3=0x7f0a001c;
+        public static final int care_titles_3_des=0x7f0a001d;
+        public static final int care_titles_4=0x7f0a001f;
+        public static final int care_titles_4_des=0x7f0a0020;
+        public static final int care_titles_5=0x7f0a0022;
+        public static final int care_titles_5_des=0x7f0a0023;
+        public static final int choice_interest=0x7f0a0009;
+        public static final int concern_iv=0x7f0a004d;
+        public static final int count=0x7f0a0030;
+        public static final int dialogbody=0x7f0a003c;
+        public static final int extraTextView=0x7f0a0005;
+        public static final int firstNameView=0x7f0a0047;
+        public static final int flowlayout=0x7f0a000f;
+        public static final int follow_tv=0x7f0a0050;
+        public static final int fragmentw=0x7f0a0045;
+        public static final int gallery=0x7f0a0012;
+        public static final int gridView=0x7f0a0035;
+        public static final int gridview=0x7f0a0010;
+        public static final int helloTextView=0x7f0a0040;
+        public static final int info=0x7f0a002e;
+        public static final int interest_tip=0x7f0a000e;
+        public static final int ivAddCircle=0x7f0a0007;
+        public static final int iv_back=0x7f0a0039;
+        public static final int iv_is_hot=0x7f0a0036;
+        public static final int jiinghua_bottom=0x7f0a0037;
+        public static final int lastNameView=0x7f0a0048;
+        public static final int listview=0x7f0a003b;
+        public static final int local_iv=0x7f0a003e;
+        public static final int local_titles=0x7f0a0011;
+        public static final int local_tv_des=0x7f0a003f;
+        public static final int message=0x7f0a0034;
+        public static final int message_iv=0x7f0a004f;
+        public static final int multiple=0x7f0a0043;
+        public static final int multiple2=0x7f0a0044;
+        public static final int myFragment=0x7f0a004a;
+        public static final int option=0x7f0a0046;
+        public static final int personList=0x7f0a004b;
+        public static final int progress_bar=0x7f0a0056;
+        public static final int sendMessage_tv=0x7f0a004e;
+        public static final int sure_tv=0x7f0a000d;
+        public static final int switch_btn=0x7f0a0054;
+        public static final int test1=0x7f0a0000;
+        public static final int test2=0x7f0a0001;
+        public static final int test3=0x7f0a0002;
+        public static final int test4=0x7f0a0003;
+        public static final int test5=0x7f0a0004;
+        public static final int testButton=0x7f0a0041;
+        public static final int testButton2=0x7f0a0042;
+        public static final int testC=0x7f0a0024;
+        public static final int testFragment=0x7f0a0049;
+        public static final int threefragmenttest=0x7f0a0051;
+        public static final int time=0x7f0a0031;
+        public static final int title=0x7f0a0033;
+        public static final int title_ico=0x7f0a0032;
+        public static final int title_layout=0x7f0a0027;
+        public static final int title_tv=0x7f0a000c;
+        public static final int top=0x7f0a000a;
+        public static final int toplay=0x7f0a0038;
+        public static final int tuichu=0x7f0a0008;
+        public static final int tvCircleName=0x7f0a0025;
+        public static final int tvDesc=0x7f0a0026;
+        public static final int tv_dialog=0x7f0a003d;
+        public static final int tv_title=0x7f0a003a;
+        public static final int video=0x7f0a0052;
+        public static final int webview=0x7f0a0055;
+        public static final int zhiding=0x7f0a0006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -164,39 +199,46 @@ public final class R {
         public static final int fragment_blank=0x7f030006;
         public static final int interest_choice_item=0x7f030007;
         public static final int item_circle_list_common=0x7f030008;
-        public static final int load=0x7f030009;
-        public static final int local_option_gallery_item=0x7f03000a;
-        public static final int main=0x7f03000b;
-        public static final int myfragment_main=0x7f03000c;
-        public static final int other_option_gridview_item=0x7f03000d;
-        public static final int person_item=0x7f03000e;
-        public static final int person_list=0x7f03000f;
-        public static final int threefragment_main=0x7f030010;
-        public static final int webview_video=0x7f030011;
+        public static final int jianghu_adapter_desc_item=0x7f030009;
+        public static final int jianghu_adapter_title_item=0x7f03000a;
+        public static final int jianghua_postslist_lv_item2=0x7f03000b;
+        public static final int jinghua_bottom_item=0x7f03000c;
+        public static final int jinghua_detail=0x7f03000d;
+        public static final int load=0x7f03000e;
+        public static final int local_option_gallery_item=0x7f03000f;
+        public static final int main=0x7f030010;
+        public static final int multiple_adapter_item=0x7f030011;
+        public static final int multiple_adapter_item2=0x7f030012;
+        public static final int myfragment_main=0x7f030013;
+        public static final int other_option_gridview_item=0x7f030014;
+        public static final int person_item=0x7f030015;
+        public static final int person_list=0x7f030016;
+        public static final int threefragment_main=0x7f030017;
+        public static final int webview_video=0x7f030018;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
+        public static final int action_settings=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060001;
         /** 选择兴趣
          */
-        public static final int interest_tip=0x7f050003;
+        public static final int interest_tip=0x7f060003;
+        public static final int poststest1=0x7f060004;
+        public static final int poststest2=0x7f060005;
     }
     public static final class style {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
 
         
 
@@ -211,32 +253,40 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int CustomCheckboxTheme=0x7f070002;
-        public static final int MyDialog=0x7f070003;
-        public static final int ProgressBarStyleLarge=0x7f070009;
-        /** 精华页大title item的style
+        public static final int AppTheme=0x7f080001;
+        public static final int CustomCheckboxTheme=0x7f080002;
+        public static final int MyDialog=0x7f080003;
+        public static final int ProgressBarStyleLarge=0x7f080009;
+        public static final int adapter_title_style=0x7f08000b;
+        public static final int adapter_title_sub_style=0x7f08000c;
+        /**  精华页大title item的style 
          */
-        public static final int postsstyle=0x7f070004;
-        /** 精华页小title item的style
+        public static final int postsstyle=0x7f080004;
+        /**  精华页小title item的style 
          */
-        public static final int postsstyle_sub=0x7f070007;
-        /** 精华页小title描述的style
+        public static final int postsstyle_sub=0x7f080007;
+        /**  精华页小title描述的style 
          */
-        public static final int postsstyle_sub_des=0x7f070008;
-        /** 精华页小title第一行描述的style
+        public static final int postsstyle_sub_des=0x7f080008;
+        /**  精华页小title第一行描述的style 
          */
-        public static final int postsstyle_sub_des_main=0x7f070006;
-        /** 精华页小title 第一行item的style
+        public static final int postsstyle_sub_des_main=0x7f080006;
+        /**  精华页小title 第一行item的style 
          */
-        public static final int postsstyle_sub_main=0x7f070005;
+        public static final int postsstyle_sub_main=0x7f080005;
         /**  顶部字体 
          */
-        public static final int style2=0x7f07000a;
+        public static final int style2=0x7f08000a;
+        /**  listview作者、浏览字体 
+         */
+        public static final int title2Font=0x7f08000d;
+        /**  listview标题字体 
+         */
+        public static final int titleFont1=0x7f08000e;
     }
     public static final class styleable {
         /** Attributes that can be used with a Gallery.

@@ -162,7 +162,7 @@ public class PersonFragment extends Activity {
 						}
 					});
 					bottom_layout.startAnimation(anim);
-				}else if(scrollState == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
+				}else if(scrollState == OnScrollListener.SCROLL_STATE_FLING){
 					LogUtils.d("SCROLL_STATE_TOUCH_SCROLL--");
 					bottom_layout.setVisibility(View.VISIBLE);
 					anim = new TranslateAnimation(0, 0, 0,

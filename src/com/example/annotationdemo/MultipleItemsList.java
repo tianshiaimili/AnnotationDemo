@@ -3,6 +3,8 @@ package com.example.annotationdemo;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
+import com.example.annotationdemo.utils.LogUtils;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.os.Bundle;
@@ -63,11 +65,15 @@ public class MultipleItemsList extends ListActivity {
    
         @Override  
         public int getItemViewType(int position) {  
+        	
+        	LogUtils.i("getItemViewType");
+        	
             return mSeparatorsSet.contains(position) ? TYPE_SEPARATOR : TYPE_ITEM;  
         }  
    
         @Override  
         public int getViewTypeCount() {  
+        	LogUtils.i("getViewTypeCount");
             return TYPE_MAX_COUNT;  
         }  
    

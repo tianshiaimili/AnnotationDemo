@@ -55,5 +55,8 @@
         <item>理财</item>
     </string-array>
     
+        <string name="poststest1">alkf;shf;lkasl;kflskd;lsakdjflskdf;lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
+        <string name="poststest2">alkf;shf;lkasl;kflskd;lsakdjflskdf;lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
+        
     
 </resources>

@@ -46,6 +46,8 @@ import com.example.annotationdemo.utils.LogUtils;
 import com.example.annotationdemo.utils.PreferenceUtils;
 import com.example.annotationdemo.view.CustomGridView;
 
+
+
 /**
  * Created by test on 2015/7/2.
  */

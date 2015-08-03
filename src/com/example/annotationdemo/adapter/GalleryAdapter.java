@@ -1,13 +1,10 @@
 package com.example.annotationdemo.adapter;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.annotationdemo.R;
@@ -21,7 +18,7 @@ public class GalleryAdapter extends BaseAdapter{
 	};
 	private Context mContext;
 	
-	public GalleryAdapter(Context context){
+	public GalleryAdapter(Context context){ 
 		this.mContext = context;
 	}
 	

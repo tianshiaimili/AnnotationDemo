@@ -4,28 +4,45 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/test1"
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="test1" />
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/test2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="test2" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/test3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="test3" />
+            <Button
+                android:id="@+id/test1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="test1" />
 
-    <Button
-        android:id="@+id/test4"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="webView视频测试" />
+            <Button
+                android:id="@+id/test2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="test2" />
+
+            <Button
+                android:id="@+id/test3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="test3" />
+
+            <Button
+                android:id="@+id/test4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="webView视频测试" />
+
+            <Button
+                android:id="@+id/test5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="MultipleItemsList" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

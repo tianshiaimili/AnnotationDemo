@@ -122,5 +122,13 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	@Click
+	void test5(){
+		
+		Intent intent = new Intent(this,MultipleItemsList.class);
+		startActivity(intent);
+		
+	}
+	
 	
 }

@@ -78,6 +78,9 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateUnspecified" >
         </activity>
+        
+        <activity android:name=".MultipleItemsList"></activity>
+        
     </application>
 
 </manifest>

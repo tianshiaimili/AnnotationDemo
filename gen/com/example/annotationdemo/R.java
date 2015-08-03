@@ -100,94 +100,95 @@ public final class R {
         public static final int topbackbnon=0x7f020041;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0057;
-        public static final int adapter_item_desc=0x7f0a002a;
-        public static final int adapter_item_sub_desc=0x7f0a002b;
-        public static final int adapter_item_sub_title=0x7f0a0029;
-        public static final int adapter_item_title=0x7f0a0028;
-        public static final int author=0x7f0a002d;
-        public static final int avatar_img=0x7f0a002c;
-        public static final int back_btn=0x7f0a0053;
-        public static final int bb_age=0x7f0a002f;
-        public static final int bottom_layout=0x7f0a004c;
-        public static final int cancel_tv=0x7f0a000b;
-        public static final int care_layout=0x7f0a0013;
-        public static final int care_layout_1=0x7f0a0015;
-        public static final int care_layout_2=0x7f0a0018;
-        public static final int care_layout_3=0x7f0a001b;
-        public static final int care_layout_4=0x7f0a001e;
-        public static final int care_layout_5=0x7f0a0021;
-        public static final int care_titles=0x7f0a0014;
-        public static final int care_titles_1=0x7f0a0016;
-        public static final int care_titles_1_des=0x7f0a0017;
-        public static final int care_titles_2=0x7f0a0019;
-        public static final int care_titles_2_des=0x7f0a001a;
-        public static final int care_titles_3=0x7f0a001c;
-        public static final int care_titles_3_des=0x7f0a001d;
-        public static final int care_titles_4=0x7f0a001f;
-        public static final int care_titles_4_des=0x7f0a0020;
-        public static final int care_titles_5=0x7f0a0022;
-        public static final int care_titles_5_des=0x7f0a0023;
-        public static final int choice_interest=0x7f0a0009;
-        public static final int concern_iv=0x7f0a004d;
-        public static final int count=0x7f0a0030;
-        public static final int dialogbody=0x7f0a003c;
-        public static final int extraTextView=0x7f0a0005;
-        public static final int firstNameView=0x7f0a0047;
-        public static final int flowlayout=0x7f0a000f;
-        public static final int follow_tv=0x7f0a0050;
-        public static final int fragmentw=0x7f0a0045;
-        public static final int gallery=0x7f0a0012;
-        public static final int gridView=0x7f0a0035;
-        public static final int gridview=0x7f0a0010;
-        public static final int helloTextView=0x7f0a0040;
-        public static final int info=0x7f0a002e;
-        public static final int interest_tip=0x7f0a000e;
-        public static final int ivAddCircle=0x7f0a0007;
-        public static final int iv_back=0x7f0a0039;
-        public static final int iv_is_hot=0x7f0a0036;
-        public static final int jiinghua_bottom=0x7f0a0037;
-        public static final int lastNameView=0x7f0a0048;
-        public static final int listview=0x7f0a003b;
-        public static final int local_iv=0x7f0a003e;
-        public static final int local_titles=0x7f0a0011;
-        public static final int local_tv_des=0x7f0a003f;
-        public static final int message=0x7f0a0034;
-        public static final int message_iv=0x7f0a004f;
-        public static final int multiple=0x7f0a0043;
-        public static final int multiple2=0x7f0a0044;
-        public static final int myFragment=0x7f0a004a;
-        public static final int option=0x7f0a0046;
-        public static final int personList=0x7f0a004b;
-        public static final int progress_bar=0x7f0a0056;
-        public static final int sendMessage_tv=0x7f0a004e;
-        public static final int sure_tv=0x7f0a000d;
-        public static final int switch_btn=0x7f0a0054;
+        public static final int action_settings=0x7f0a0058;
+        public static final int adapter_item_desc=0x7f0a002b;
+        public static final int adapter_item_sub_desc=0x7f0a002c;
+        public static final int adapter_item_sub_title=0x7f0a002a;
+        public static final int adapter_item_title=0x7f0a0029;
+        public static final int author=0x7f0a002e;
+        public static final int avatar_img=0x7f0a002d;
+        public static final int back_btn=0x7f0a0054;
+        public static final int bb_age=0x7f0a0030;
+        public static final int bottom_layout=0x7f0a004d;
+        public static final int cancel_tv=0x7f0a000c;
+        public static final int care_layout=0x7f0a0014;
+        public static final int care_layout_1=0x7f0a0016;
+        public static final int care_layout_2=0x7f0a0019;
+        public static final int care_layout_3=0x7f0a001c;
+        public static final int care_layout_4=0x7f0a001f;
+        public static final int care_layout_5=0x7f0a0022;
+        public static final int care_titles=0x7f0a0015;
+        public static final int care_titles_1=0x7f0a0017;
+        public static final int care_titles_1_des=0x7f0a0018;
+        public static final int care_titles_2=0x7f0a001a;
+        public static final int care_titles_2_des=0x7f0a001b;
+        public static final int care_titles_3=0x7f0a001d;
+        public static final int care_titles_3_des=0x7f0a001e;
+        public static final int care_titles_4=0x7f0a0020;
+        public static final int care_titles_4_des=0x7f0a0021;
+        public static final int care_titles_5=0x7f0a0023;
+        public static final int care_titles_5_des=0x7f0a0024;
+        public static final int choice_interest=0x7f0a000a;
+        public static final int concern_iv=0x7f0a004e;
+        public static final int count=0x7f0a0031;
+        public static final int dialogbody=0x7f0a003d;
+        public static final int extraTextView=0x7f0a0006;
+        public static final int firstNameView=0x7f0a0048;
+        public static final int flowlayout=0x7f0a0010;
+        public static final int follow_tv=0x7f0a0051;
+        public static final int fragmentw=0x7f0a0046;
+        public static final int gallery=0x7f0a0013;
+        public static final int gridView=0x7f0a0036;
+        public static final int gridview=0x7f0a0011;
+        public static final int helloTextView=0x7f0a0041;
+        public static final int info=0x7f0a002f;
+        public static final int interest_tip=0x7f0a000f;
+        public static final int ivAddCircle=0x7f0a0008;
+        public static final int iv_back=0x7f0a003a;
+        public static final int iv_is_hot=0x7f0a0037;
+        public static final int jiinghua_bottom=0x7f0a0038;
+        public static final int lastNameView=0x7f0a0049;
+        public static final int listview=0x7f0a003c;
+        public static final int local_iv=0x7f0a003f;
+        public static final int local_titles=0x7f0a0012;
+        public static final int local_tv_des=0x7f0a0040;
+        public static final int message=0x7f0a0035;
+        public static final int message_iv=0x7f0a0050;
+        public static final int multiple=0x7f0a0044;
+        public static final int multiple2=0x7f0a0045;
+        public static final int myFragment=0x7f0a004b;
+        public static final int option=0x7f0a0047;
+        public static final int personList=0x7f0a004c;
+        public static final int progress_bar=0x7f0a0057;
+        public static final int sendMessage_tv=0x7f0a004f;
+        public static final int sure_tv=0x7f0a000e;
+        public static final int switch_btn=0x7f0a0055;
         public static final int test1=0x7f0a0000;
         public static final int test2=0x7f0a0001;
         public static final int test3=0x7f0a0002;
         public static final int test4=0x7f0a0003;
         public static final int test5=0x7f0a0004;
-        public static final int testButton=0x7f0a0041;
-        public static final int testButton2=0x7f0a0042;
-        public static final int testC=0x7f0a0024;
-        public static final int testFragment=0x7f0a0049;
-        public static final int threefragmenttest=0x7f0a0051;
-        public static final int time=0x7f0a0031;
-        public static final int title=0x7f0a0033;
-        public static final int title_ico=0x7f0a0032;
-        public static final int title_layout=0x7f0a0027;
-        public static final int title_tv=0x7f0a000c;
-        public static final int top=0x7f0a000a;
-        public static final int toplay=0x7f0a0038;
-        public static final int tuichu=0x7f0a0008;
-        public static final int tvCircleName=0x7f0a0025;
-        public static final int tvDesc=0x7f0a0026;
-        public static final int tv_dialog=0x7f0a003d;
-        public static final int tv_title=0x7f0a003a;
-        public static final int video=0x7f0a0052;
-        public static final int webview=0x7f0a0055;
-        public static final int zhiding=0x7f0a0006;
+        public static final int test6=0x7f0a0005;
+        public static final int testButton=0x7f0a0042;
+        public static final int testButton2=0x7f0a0043;
+        public static final int testC=0x7f0a0025;
+        public static final int testFragment=0x7f0a004a;
+        public static final int threefragmenttest=0x7f0a0052;
+        public static final int time=0x7f0a0032;
+        public static final int title=0x7f0a0034;
+        public static final int title_ico=0x7f0a0033;
+        public static final int title_layout=0x7f0a0028;
+        public static final int title_tv=0x7f0a000d;
+        public static final int top=0x7f0a000b;
+        public static final int toplay=0x7f0a0039;
+        public static final int tuichu=0x7f0a0009;
+        public static final int tvCircleName=0x7f0a0026;
+        public static final int tvDesc=0x7f0a0027;
+        public static final int tv_dialog=0x7f0a003e;
+        public static final int tv_title=0x7f0a003b;
+        public static final int video=0x7f0a0053;
+        public static final int webview=0x7f0a0056;
+        public static final int zhiding=0x7f0a0007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -228,18 +229,17 @@ public final class R {
         public static final int interest_tip=0x7f060003;
         public static final int poststest1=0x7f060004;
         public static final int poststest2=0x7f060005;
+        public static final int title_recommend=0x7f060006;
     }
     public static final class style {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
         
 
         Base application theme for API 11+. This theme completely replaces

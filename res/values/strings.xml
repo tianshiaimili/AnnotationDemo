@@ -55,8 +55,9 @@
         <item>理财</item>
     </string-array>
     
-        <string name="poststest1">alkf;shf;lkasl;kflskd;lsakdjflskdf;lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
-        <string name="poststest2">alkf;shf;lkasl;kflskd;lsakdjflskdf;lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
+        <string name="poststest1">alkf;shf;lkasl;kflskd;lsakdjflskdf;啦啦啦换行吧 \n lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
+        <string name="poststest2">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦的妈妈妈妈妈妈妈妈的萨达斯uisuf临渴掘井阿斯兰达离开家斯大林会计师</string>
         
-    
+    <string name="title_recommend">#%s#</string>
+        
 </resources>

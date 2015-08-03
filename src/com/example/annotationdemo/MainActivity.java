@@ -131,4 +131,12 @@ public class MainActivity extends Activity {
 	}
 	
 	
+	@Click
+	void test6(){
+		
+		Intent intent = new Intent(this,CreamDetail_.class);
+		startActivity(intent);
+		
+	}
+	
 }

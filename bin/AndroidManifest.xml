@@ -80,6 +80,7 @@
         </activity>
         
         <activity android:name=".MultipleItemsList"></activity>
+        <activity android:name=".CreamDetail_"></activity>
         
     </application>
 

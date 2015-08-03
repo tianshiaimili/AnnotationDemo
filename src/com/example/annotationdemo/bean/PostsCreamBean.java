@@ -13,6 +13,13 @@ public class PostsCreamBean implements Serializable{
 	String commentCount;
 	String time;
 	String age;
+	String auto;
+	public String getAuto() {
+		return auto;
+	}
+	public void setAuto(String auto) {
+		this.auto = auto;
+	}
 	public String getType() {
 		return type;
 	}

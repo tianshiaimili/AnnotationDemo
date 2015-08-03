@@ -19,10 +19,9 @@
             style="@style/adapter_title_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:drawableLeft="@drawable/details_information"
+            android:layout_gravity="center_vertical"
             android:drawablePadding="10dp"
-            android:gravity="center"
             android:text="实用信息" />
 
         <TextView
@@ -30,10 +29,12 @@
             style="@style/adapter_title_sub_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_toRightOf="@id/adapter_item_title"
-            android:gravity="center"
-            android:text="实用信息" />
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:text="吐血推荐.." />
     </LinearLayout>
 
     <LinearLayout
@@ -46,9 +47,7 @@
             android:id="@+id/adapter_item_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="实用信息"
+            android:text="@string/title_recommend"
             android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -57,9 +56,8 @@
             android:id="@+id/adapter_item_sub_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:text="实用信息"
+            android:lineSpacingExtra="5dp"
             android:textColor="#666666"
             android:textSize="18sp" />
     </LinearLayout>

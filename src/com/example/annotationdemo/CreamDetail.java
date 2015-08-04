@@ -10,6 +10,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.StringRes;
@@ -23,6 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.annotationdemo.bean.PostsCreamBean;
+import com.example.annotationdemo.utils.LogUtils;
 import com.example.annotationdemo.view.ScaleImageView;
 
 /**
@@ -36,10 +38,10 @@ public class CreamDetail extends Activity {
 	@ViewById
 	ListView listview;
 	
-	@StringRes
+	@org.androidannotations.annotations.res.StringRes(R.string.poststest1)
 	String poststest1;
 	
-	@StringRes
+	@org.androidannotations.annotations.res.StringRes(R.string.poststest2)
 	String poststest2;
 	
 	CreamDetailAdapter adapter;
@@ -49,7 +51,7 @@ public class CreamDetail extends Activity {
 	@AfterInject
 	void initVariable(){
 		
-		for(int i = 0;i<5;i++){
+		for(int i = 0;i<10;i++){
 			
 			PostsCreamBean bean = new PostsCreamBean();
 
@@ -59,14 +61,16 @@ public class CreamDetail extends Activity {
 				bean.setDesc(poststest2);
 				bean.setCommentCount(100+"");
 				bean.setName("test"+i);
+				bean.setAuto("hua"+i);
 				bean.setAge(10+"");
-				bean.setTime(new Date().toString());
-				bean.setType(0+"");
+				bean.setTime("2020.10.20");
+				bean.setType(1+"");
+				bean.setCommentCount("100");
 			}else {
 				bean.setId("ID - "+i);
 				bean.setDescTitle("这里是item1测试Title - "+i);
 				bean.setDesc(poststest1);
-				bean.setType(1+"");
+				bean.setType(0+"");
 			}
 			
 			list.add(bean);
@@ -80,6 +84,7 @@ public class CreamDetail extends Activity {
 	void initViews(){
 		
 		adapter = new CreamDetailAdapter(this,list);
+		listview.setAdapter(adapter);
 		
 	}
 	
@@ -92,6 +97,9 @@ class CreamDetailAdapter extends BaseAdapter{
 	TreeSet mSeparatorsSet = new TreeSet();  
 	Context context;
 	List<PostsCreamBean> temPostsCreamBeans;
+	int oldType = -1;
+	int title_item_position;
+	
 	
 	public CreamDetailAdapter(Context tempContext,List<PostsCreamBean> list){
 		context = tempContext;
@@ -116,7 +124,7 @@ class CreamDetailAdapter extends BaseAdapter{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder;
-		
+//		PostsCreamBean bean = temPostsCreamBeans.get(position);
 		int type = getItemViewType(position);
 		if(convertView == null){
 			
@@ -129,9 +137,10 @@ class CreamDetailAdapter extends BaseAdapter{
 			
 		}
 		
+		setData(viewHolder,temPostsCreamBeans, type, position);
+		oldType = type;
 		
-		
-		return null;
+		return convertView;
 	}
 
 	@Override
@@ -182,16 +191,54 @@ class CreamDetailAdapter extends BaseAdapter{
 	        return holder;
 	    }
 	   
-	public void setData(View contentView,PostsCreamBean bean,int type,int position){
+	public void setData(ViewHolder holder,List<PostsCreamBean> beans,int type,int position){
 		
 		int key = type;
+		PostsCreamBean bean = beans.get(position);
 		
 		switch (key) {
 		case 0:
+			ViewHolderDesc holderDesc = (ViewHolderDesc) holder;
+			if(position == 0){
+				LogUtils.d("******************");
+				holderDesc.title_layout.setVisibility(View.VISIBLE);
+				holderDesc.adapter_item_title.setText("实用信息");
+				holderDesc.adapter_item_sub_title.setText("吐血整理哦 ，不看后悔哦");
+				holderDesc.adapter_item_desc.setText(context.getString(R.string.title_recommend,bean.getDescTitle()));
+				holderDesc.adapter_item_sub_desc.setText(bean.getDesc());
+				
+			}else {
+				holderDesc.title_layout.setVisibility(View.GONE);
+				holderDesc.adapter_item_desc.setText(context.getString(R.string.title_recommend,bean.getDescTitle()));
+				holderDesc.adapter_item_sub_desc.setText(bean.getDesc());
+				
+			}
 			
 			break;
 			
 		case 1:
+			ViewHoldePosts viewHoldePosts = (ViewHoldePosts) holder;
+			if((oldType != key && title_item_position == 0 ) || title_item_position == position){
+				title_item_position = position;
+				LogUtils.d("**-----------------------****");
+				viewHoldePosts.title_layout.setVisibility(View.VISIBLE);
+				viewHoldePosts.adapter_item_title.setText("妈妈经验哦");
+				viewHoldePosts.adapter_item_sub_title.setText("全是精华 拿走吧");
+				viewHoldePosts.author.setText(bean.getAuto());
+				viewHoldePosts.bb_age.setText(bean.getAge());
+				viewHoldePosts.count.setText(bean.getAge());
+				viewHoldePosts.message.setText(bean.getDesc());
+				viewHoldePosts.time.setText(bean.getTime());
+				viewHoldePosts.count.setText(bean.getCommentCount());
+			}else {
+				viewHoldePosts.title_layout.setVisibility(View.GONE);
+				viewHoldePosts.author.setText(bean.getAuto());
+				viewHoldePosts.bb_age.setText(bean.getAge());
+				viewHoldePosts.count.setText(bean.getAge());
+				viewHoldePosts.message.setText(bean.getDesc());
+				viewHoldePosts.time.setText(bean.getTime());
+				viewHoldePosts.count.setText(bean.getCommentCount());
+			}
 			
 			break;
 
@@ -260,6 +307,7 @@ class CreamDetailAdapter extends BaseAdapter{
 			title_ico = (ImageView) view.findViewById(R.id.title_ico);
 			title = (TextView) view.findViewById(R.id.title);
 			message = (TextView) view.findViewById(R.id.message);
+			count = (TextView) view.findViewById(R.id.count);
 		}
 		
 	}

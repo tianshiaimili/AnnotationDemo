@@ -71,6 +71,7 @@
         </activity>
         <activity android:name=".ChoiceInterest_" >
         </activity>
+        <activity android:name=".testactivity.ChoiceInterest3_" />
         <activity
             android:name=".WebViewPlayer_"
             android:configChanges="keyboardHidden|screenSize|orientation"
@@ -80,6 +81,7 @@
         </activity>
         
         <activity android:name=".MultipleItemsList"></activity>
+        <activity android:name=".CreamDetail_"></activity>
         
     </application>
 

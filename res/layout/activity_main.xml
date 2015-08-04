@@ -42,6 +42,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="MultipleItemsList" />
+
+            <Button
+                android:id="@+id/test6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="精华item页" />
+
+            <Button
+                android:id="@+id/test7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="兴趣叶选择" />
         </LinearLayout>
     </ScrollView>
 

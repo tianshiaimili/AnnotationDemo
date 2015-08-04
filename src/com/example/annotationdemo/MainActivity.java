@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.example.annotationdemo.testactivity.ChoiceInterest3_;
 import com.example.annotationdemo.utils.LogUtils;
 
 
@@ -130,5 +131,21 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	
+	@Click
+	void test6(){
+		
+		Intent intent = new Intent(this,CreamDetail_.class);
+		startActivity(intent);
+		
+	}
+	
+	@Click
+	void test7(){
+		
+		Intent intent = new Intent(this,ChoiceInterest3_.class);
+		startActivity(intent);
+		
+	}
 	
 }

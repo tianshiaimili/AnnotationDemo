@@ -75,8 +75,6 @@
         android:id="@+id/listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:cacheColorHint="@null"
         android:divider="@null"

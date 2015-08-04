@@ -36,6 +36,7 @@ public class ChoiceInterest  extends Activity  {
 
     @ViewById(R.id.flowlayout)
     MMFlowLayout  flowlayout;
+//    MMFlowLayout  flowlayout;
 
     int [] colors = {R.drawable.green_big_box_selector,
             R.drawable.blue_box_selector,
@@ -89,6 +90,8 @@ public class ChoiceInterest  extends Activity  {
 
     private void initChildViews() {
 
+    	//这个是针对ViewGroup的Layout
+    	
         ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.leftMargin = 20;
@@ -115,6 +118,36 @@ public class ChoiceInterest  extends Activity  {
             });
             flowlayout.addView(view,lp);
         }
+    	
+    	/**这个是针对RelativeLayout的*/
+    	
+//    	 LayoutParams lp = new LayoutParams(
+//                 LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+//         lp.leftMargin = 20;
+//         lp.rightMargin = 20;
+//         lp.topMargin = 20;
+//         lp.bottomMargin = 20;
+//         for(int i = 0; i < testTitles.length; i ++){
+//             CheckBox view = new CheckBox(this);
+//             view.setButtonDrawable(android.R.color.transparent);
+//             view.setText(testTitles[i]);
+//             view.setTextColor(Color.parseColor("#666666"));
+//             view.setTextSize(16);
+//             view.setGravity(Gravity.CENTER);
+////             view.setBackgroundDrawable(getResources().getDrawable(R.drawable.textview_bg));
+//             Random random = new Random();
+//             int index = random.nextInt(colors.length);
+//             view.setBackgroundResource(colors[index]);
+//             final String content = view.getText().toString();
+//             view.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                 @Override
+//                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                     Toast.makeText(ChoiceInterest.this, content, 300).show();
+//                 }
+//             });
+//             flowlayout.addView(view,lp);
+//         }
+    	
     }
 
     @Click

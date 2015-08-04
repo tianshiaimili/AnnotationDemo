@@ -10,20 +10,29 @@
     <string-array name="interest_option">
         <item>烘焙</item>
         <item>旅游</item>
-        <item>园艺</item>
+        <item>园艺蜡</item>
         <item>护肤</item>
         <item>宠物</item>
         <item>搭配</item>
+         <item>宠物梅派</item>
+        <item>DIY</item>
+         <item>宠物梅派</item>
+        <item>单反/摄影</item>
+          <item>旅游</item>
+        <item>园艺</item>
+        <item>护肤</item>
+        <item>宠物黑</item>
+        <item>搭配</item>
         <item>DIY</item>
         <item>单反/摄影</item>
-        <item>小说</item>
-        <item>美发美甲</item>
-        <item>养生</item>
-        <item>花草</item>
-        <item>情感</item>
-        <item>瑜伽/健身</item>
-        <item>没牌</item>
-        <item>瘦身</item>
+          <item>旅游唉</item>
+           <item>宠物梅派</item>
+        <item>园艺</item>
+        <item>护肤</item>
+        <item>宠物梅派</item>
+        <item>搭配</item>
+        <item>DIY</item>
+        <item>单反/摄影</item>
     </string-array>
     
     <string-array name="interest">

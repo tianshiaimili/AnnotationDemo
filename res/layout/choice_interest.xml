@@ -57,32 +57,12 @@
         android:textColor="#666666"
         android:textSize="18sp" />
 
-    <LinearLayout
+    <com.example.annotationdemo.view.MMFlowLayout
+        android:id="@+id/flowlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-
-        <com.example.annotationdemo.view.MMFlowLayout
-            android:id="@+id/flowlayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp" />
-    </LinearLayout>
-
-    <!--
-    <cn.mama.view.CustomGridView
-        android:id="@+id/gridview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="@dimen/menu_item_padding"
-        android:background="@color/white"
-        android:horizontalSpacing="20dp"
-        android:numColumns="2"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:verticalSpacing="20dp"></cn.mama.view.CustomGridView>
-    -->
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp" />
 
 </LinearLayout>

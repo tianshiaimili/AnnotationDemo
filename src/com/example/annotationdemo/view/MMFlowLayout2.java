@@ -3,29 +3,30 @@ package com.example.annotationdemo.view;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.R.integer;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.example.annotationdemo.utils.LogUtils;
 /**
  * 
  */
-public class MMFlowLayout extends ViewGroup{
+public class MMFlowLayout2 extends RelativeLayout{
 
-    public MMFlowLayout(Context context) {
+    public MMFlowLayout2(Context context) {
         this(context, null);
         // TODO Auto-generated constructor stub
-//        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+        
+        
     }
-    public MMFlowLayout(Context context, AttributeSet attrs) {
+    public MMFlowLayout2(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
         // TODO Auto-generated constructor stub
     }
-    public MMFlowLayout(Context context, AttributeSet attrs, int defStyle) {
+    public MMFlowLayout2(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         // TODO Auto-generated constructor stub
     }
@@ -48,7 +49,6 @@ public class MMFlowLayout extends ViewGroup{
         
         //获取子view的个数
         int childCount = getChildCount();
-        LogUtils.d("height -- childCount--"+childCount);
         for(int i = 0;i < childCount; i ++){
             View child = getChildAt(i);
             //测量子View的宽和高
@@ -80,54 +80,11 @@ public class MMFlowLayout extends ViewGroup{
                 height += lineHeight;
             }
         }
-        
         //wrap_content
-        int readWidth = modeWidth == MeasureSpec.EXACTLY ? sizeWidth : width;
-        int readHeight = modeHeight == MeasureSpec.EXACTLY ? sizeHeight : height;
-        LogUtils.i("the height readWidth=="+readWidth);
-        LogUtils.d("the height  *********readHeight=="+readHeight);
-        
-//        setMeasuredDimension(modeWidth,modeHeight );
-        setMeasuredDimension(measureWidth(widthMeasureSpec,width),measureHeight(heightMeasureSpec, height) );
-        
-        LogUtils.i("the height +++++++++=="+height);
-        LogUtils.d("the height  ---------------sizeHeight=="+sizeHeight);
-//        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(modeWidth == MeasureSpec.EXACTLY ? sizeWidth : width,
+                modeHeight == MeasureSpec.EXACTLY ? sizeHeight : height);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
-    
-    
-    private int measureWidth(int measureSpec,int width) {  
-        int result = 0;  
-        int specMode = MeasureSpec.getMode(measureSpec);  
-        int specSize = MeasureSpec.getSize(measureSpec);  
-  
-        if (specMode == MeasureSpec.EXACTLY) {  
-            // We were told how big to be  
-            result = specSize;  
-        } else {  
-            // Measure the text  
-            result = width;
-            }  
-  
-        return result;  
-    } 
-    
-    private int measureHeight(int measureSpec,int height) {  
-        int result = 0;  
-        int specMode = MeasureSpec.getMode(measureSpec);  
-        int specSize = MeasureSpec.getSize(measureSpec);  
-  
-        if (specMode == MeasureSpec.EXACTLY) {  
-            // We were told how big to be  
-            result = specSize;  
-        } else {  
-            // Measure the text (beware: ascent is a negative number)  
-            result = height;
-        }  
-        return result;  
-    }
-    
-    
     //存储所有子View
     private List<List<View>> mAllChildViews = new ArrayList<List<View>>();
     //每一行的高度
@@ -217,7 +174,7 @@ public class MMFlowLayout extends ViewGroup{
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         // TODO Auto-generated method stub
         
-        return new MarginLayoutParams(getContext(), attrs);
+        return (LayoutParams) new MarginLayoutParams(getContext(), attrs);
     }
     
     

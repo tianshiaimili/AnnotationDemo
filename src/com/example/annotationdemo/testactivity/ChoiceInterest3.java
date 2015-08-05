@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.example.annotationdemo.R;
 import com.example.annotationdemo.bean.InterestChoiceBean;
+import com.example.annotationdemo.utils.LogUtils;
 import com.example.annotationdemo.view.MMFlowLayout;
 import com.example.annotationdemo.view.RefleshListView;
 
@@ -106,12 +107,13 @@ public class ChoiceInterest3  extends Activity  {
 
 //        adapter = new InterestAdapter(this,listBean);
 //        gridview.setAdapter(adapter);
-    	linearLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.follower, null);
+    	linearLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.folowlayout, null);
 //    	flowlayout = (MMFlowLayout) LayoutInflater.from(this).inflate(R.layout.follower, null);
     	flowlayout = (MMFlowLayout) linearLayout.findViewById(R.id.flowlayout);
 //        AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,AbsListView.LayoutParams.MATCH_PARENT);
 //        flowlayout.setLayoutParams(params);
         initChildViews();
+        LogUtils.e("count--"+flowlayout.getChildCount());
         setListView();
 
     }
@@ -133,11 +135,12 @@ public class ChoiceInterest3  extends Activity  {
             }
         });
         listview.setAdapter(new TestAdapter());
+//        listview.
         listview.setPreLoadMore(false);
 //        listview.setPullLoadMoreEnable(false);
         listview.setVisibility(View.VISIBLE);
-        listview.refreshCompleted();
-        listview.loadMoreCompleted();
+//        listview.refreshCompleted();
+//        listview.loadMoreCompleted();
         listview.setLoadMoreable(false);
 //
 //        erroeMessageUtil = new ErroeMessageUtil(this);
@@ -287,7 +290,7 @@ public class ChoiceInterest3  extends Activity  {
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return 5;
+			return 0;
 		}
 
 		@Override

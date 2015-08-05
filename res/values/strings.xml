@@ -5,8 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-        <!--选择兴趣-->
+    <!-- 选择兴趣 -->
     <string name="interest_tip">点击选择兴趣，找到志同道合的好友</string>
+
     <string-array name="interest_option">
         <item>烘焙</item>
         <item>旅游</item>
@@ -14,19 +15,31 @@
         <item>护肤</item>
         <item>宠物</item>
         <item>搭配</item>
-         <item>宠物梅派</item>
+        <item>宠物梅派</item>
         <item>DIY</item>
-         <item>宠物梅派</item>
+        <item>宠物梅派</item>
         <item>单反/摄影</item>
-          <item>旅游</item>
+        <item>旅游</item>
         <item>园艺</item>
         <item>护肤</item>
         <item>宠物黑</item>
         <item>搭配</item>
         <item>DIY</item>
         <item>单反/摄影</item>
-          <item>旅游唉</item>
-           <item>宠物梅派</item>
+        <item>旅游唉</item>
+        <item>宠物梅派</item>
+        <item>园艺</item>
+        <item>护肤</item>
+        <item>单反/摄影</item>
+        <item>旅游</item>
+        <item>园艺</item>
+        <item>护肤</item>
+        <item>宠物黑</item>
+        <item>搭配</item>
+        <item>DIY</item>
+        <item>单反/摄影</item>
+        <item>旅游唉</item>
+        <item>宠物梅派</item>
         <item>园艺</item>
         <item>护肤</item>
         <item>宠物梅派</item>
@@ -34,9 +47,7 @@
         <item>DIY</item>
         <item>单反/摄影</item>
     </string-array>
-    
     <string-array name="interest">
-        
         <item>test1</item>
         <item>test2</item>
         <item>test3</item>
@@ -47,11 +58,8 @@
         <item>test8</item>
         <item>test9</item>
         <item>test10</item>
-        
     </string-array>
-    
-    
-        <string-array name="other_recommend">
+    <string-array name="other_recommend">
         <item>烘焙德玛西亚</item>
         <item>旅游啦啦啦</item>
         <item>园艺</item>
@@ -63,13 +71,12 @@
         <item>小说</item>
         <item>理财</item>
     </string-array>
-    
-        <string name="poststest1">alkf;shf;lkasl;kflskd;lsakdjflskdf;啦啦啦换行吧 \n lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
-        <string name="poststest2">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦的妈妈妈妈妈妈妈妈的萨达斯uisuf临渴掘井阿斯兰达离开家斯大林会计师</string>
-        
+
+    <string name="poststest1">alkf;shf;lkasl;kflskd;lsakdjflskdf;啦啦啦换行吧 \n lsakjdf;laskdflkas;flsadlfksalkdfsf;sladfsldlskdsjdf;lksd</string>
+    <string name="poststest2">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦的妈妈妈妈妈妈妈妈的萨达斯uisuf临渴掘井阿斯兰达离开家斯大林会计师</string>
     <string name="title_recommend">#%s#</string>
-    
-        <string-array name="choice_interest_background">
+
+    <string-array name="choice_interest_background">
         <item>@drawable/blue_box_normal</item>
         <item>@drawable/blue_box_press</item>
         <item>@drawable/green_big_box_normal</item>
@@ -83,7 +90,5 @@
         <item>@drawable/red_box_normal</item>
         <item>@drawable/red_box_press</item>
     </string-array>
-    
-    
-        
+
 </resources>

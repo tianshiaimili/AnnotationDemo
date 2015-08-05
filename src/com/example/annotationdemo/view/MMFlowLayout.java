@@ -8,18 +8,19 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.MeasureSpec;
 import android.widget.LinearLayout;
 
 import com.example.annotationdemo.utils.LogUtils;
 /**
  * 
  */
+
 public class MMFlowLayout extends ViewGroup{
 
     public MMFlowLayout(Context context) {
         this(context, null);
         // TODO Auto-generated constructor stub
-//        setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
     }
     public MMFlowLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -48,7 +49,6 @@ public class MMFlowLayout extends ViewGroup{
         
         //获取子view的个数
         int childCount = getChildCount();
-        LogUtils.d("height -- childCount--"+childCount);
         for(int i = 0;i < childCount; i ++){
             View child = getChildAt(i);
             //测量子View的宽和高
@@ -84,14 +84,9 @@ public class MMFlowLayout extends ViewGroup{
         //wrap_content
         int readWidth = modeWidth == MeasureSpec.EXACTLY ? sizeWidth : width;
         int readHeight = modeHeight == MeasureSpec.EXACTLY ? sizeHeight : height;
-        LogUtils.i("the height readWidth=="+readWidth);
-        LogUtils.d("the height  *********readHeight=="+readHeight);
         
 //        setMeasuredDimension(modeWidth,modeHeight );
-        setMeasuredDimension(measureWidth(widthMeasureSpec,width),measureHeight(heightMeasureSpec, height) );
-        
-        LogUtils.i("the height +++++++++=="+height);
-        LogUtils.d("the height  ---------------sizeHeight=="+sizeHeight);
+        setMeasuredDimension(measureWidth(widthMeasureSpec,width),measureHeight(heightMeasureSpec, (int)(height*0.7)) );
 //        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
     
@@ -101,14 +96,15 @@ public class MMFlowLayout extends ViewGroup{
         int specMode = MeasureSpec.getMode(measureSpec);  
         int specSize = MeasureSpec.getSize(measureSpec);  
   
-        if (specMode == MeasureSpec.EXACTLY) {  
-            // We were told how big to be  
-            result = specSize;  
-        } else {  
-            // Measure the text  
+        switch (specMode) {
+        case MeasureSpec.AT_MOST:
+        case MeasureSpec.UNSPECIFIED:
             result = width;
-            }  
-  
+            break;
+        case MeasureSpec.EXACTLY:
+            result = specSize;
+            break;
+        }
         return result;  
     } 
     
@@ -116,14 +112,18 @@ public class MMFlowLayout extends ViewGroup{
         int result = 0;  
         int specMode = MeasureSpec.getMode(measureSpec);  
         int specSize = MeasureSpec.getSize(measureSpec);  
-  
-        if (specMode == MeasureSpec.EXACTLY) {  
-            // We were told how big to be  
-            result = specSize;  
-        } else {  
-            // Measure the text (beware: ascent is a negative number)  
+
+        switch (specMode) {
+        case MeasureSpec.UNSPECIFIED:
+        case MeasureSpec.AT_MOST:
             result = height;
-        }  
+            break;
+        
+        case MeasureSpec.EXACTLY:
+            result = specSize;
+            break;
+        }
+        
         return result;  
     }
     
@@ -186,12 +186,6 @@ public class MMFlowLayout extends ViewGroup{
                 if(child.getVisibility() == View.GONE){
                     continue;
                 }
-                
-//                for(int k = 0;k < lineViews.size();k++){
-//                	View child2 = lineViews.get(k);
-//                	MarginLayoutParams lp2 = (MarginLayoutParams) child2.getLayoutParams();
-//                	left += lp2.leftMargin+lp2.rightMargin + child2.getMeasuredWidth();
-//                }
                 if(j == 0){
                 	left = getStartCoordinate(lineViews);
                 }
@@ -224,8 +218,6 @@ public class MMFlowLayout extends ViewGroup{
     public int getStartCoordinate(List<View> lineViews){
     	int left = 0;
     	int screenWidth = getWidth();
-    	LogUtils.i("screenWidth--"+screenWidth);
-    	
         for(int k = 0;k < lineViews.size();k++){
         	View child2 = lineViews.get(k);
         	MarginLayoutParams lp2 = (MarginLayoutParams) child2.getLayoutParams();
@@ -233,7 +225,6 @@ public class MMFlowLayout extends ViewGroup{
         }
     	
         left = (screenWidth - left)/2; 
-        LogUtils.d("left---"+left);
     	return left;
     	
     }

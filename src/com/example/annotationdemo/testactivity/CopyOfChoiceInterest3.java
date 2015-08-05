@@ -105,8 +105,8 @@ public class CopyOfChoiceInterest3  extends Activity  {
 
 //        adapter = new InterestAdapter(this,listBean);
 //        gridview.setAdapter(adapter);
-    	linearLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.follower, null);
-    	flowlayout = (MMFlowLayout) LayoutInflater.from(this).inflate(R.layout.follower, null);
+    	linearLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.folowlayout, null);
+    	flowlayout = (MMFlowLayout) LayoutInflater.from(this).inflate(R.layout.folowlayout, null);
 //    	flowlayout = (MMFlowLayout) linearLayout.findViewById(R.id.flowlayout);
 //        AbsListView.LayoutParams params = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT,AbsListView.LayoutParams.MATCH_PARENT);
 //        flowlayout.setLayoutParams(params);

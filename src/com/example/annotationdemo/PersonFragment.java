@@ -221,7 +221,7 @@ public class PersonFragment extends Activity {
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 				
 				// /
-				if(buttomLayoutItemHeight == 0) return;
+				if(bottom_layout.getHeight() == 0) return;
 				if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
 //					LogUtils.i("the bottom****"+bottom_layout.getY());
 //					LogUtils.i("the buttomLayoutItemHeight****"+buttomLayoutItemHeight);
@@ -231,7 +231,7 @@ public class PersonFragment extends Activity {
 //					LogUtils.i("the screen cccc =****"+scrollRecode);
 //					
 					////////////////////ObjectAnimator 比较简单点
-					ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(bottom_layout, "translationY", buttomLayoutItemHeight,0);
+					ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(bottom_layout, "translationY", bottom_layout.getHeight(),0);
 					objectAnimator.setDuration(500);
 					objectAnimator.setInterpolator(new DecelerateInterpolator());
 					objectAnimator.addListener(new AnimatorListener() {
@@ -350,10 +350,10 @@ public class PersonFragment extends Activity {
 					int visibleItemCount, int totalItemCount) {
 					LogUtils.d("point--"+point);
 					LogUtils.i("buttomLayoutItemHeight-="+buttomLayoutItemHeight);
-				if( point >= 0 && point <= buttomLayoutItemHeight && !haveScroll){
+				if( point >= 0 && point <= bottom_layout.getHeight() && !haveScroll){
 					bottom_layout.setTranslationY(point);
 					LogUtils.i("the bottom=="+bottom_layout.getY());
-				}else if(point > buttomLayoutItemHeight){
+				}else if(point > bottom_layout.getHeight()){
 					haveScroll = true;
 				}
 				
@@ -369,7 +369,7 @@ public class PersonFragment extends Activity {
 			public void run() {
 				Message message = new Message();
 				message.what = 1;
-				mHandler.sendMessage(message);
+//				mHandler.sendMessage(message);
 			}
 		};
 		// 延迟每次延迟10 毫秒 隔1秒执行一次

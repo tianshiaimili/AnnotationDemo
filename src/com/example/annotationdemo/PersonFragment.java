@@ -16,6 +16,7 @@ import org.androidannotations.annotations.ItemLongClick;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.StringArrayRes;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.FragmentManager;
@@ -32,6 +33,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
@@ -101,6 +104,7 @@ public class PersonFragment extends Activity {
 	private int tempPoint;
 	private int point;
 	private boolean isStart;
+	private boolean haveScroll;
 
 	Handler mHandler = new Handler() {
 
@@ -198,7 +202,7 @@ public class PersonFragment extends Activity {
 					
 					
 				case MotionEvent.ACTION_UP:
-					point =  0;
+					point =  -1;
 					isStart = false;
 					
 					break;
@@ -218,12 +222,23 @@ public class PersonFragment extends Activity {
 				// /
 				if(buttomLayoutItemHeight == 0) return;
 				if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
-					LogUtils.i("the bottom****"+bottom_layout.getY());
-					LogUtils.i("the buttomLayoutItemHeight****"+buttomLayoutItemHeight);
-					 anim = new TranslateAnimation(0, 0,
-					 bottom_layout.getHeight(),
+//					LogUtils.i("the bottom****"+bottom_layout.getY());
+//					LogUtils.i("the buttomLayoutItemHeight****"+buttomLayoutItemHeight);
+//					int screenHeight = getResources().getDisplayMetrics().heightPixels;
+//					LogUtils.d("the screen height =****"+screenHeight);
+//					int scrollRecode = (int) (bottom_layout.getY() - screenHeight);
+//					LogUtils.i("the screen cccc =****"+scrollRecode);
+//					
+					////////////////////ObjectAnimator 比较简单点
+					ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(bottom_layout, "translationY", buttomLayoutItemHeight,0);
+					objectAnimator.setDuration(500);
+					objectAnimator.setInterpolator(new BounceInterpolator());
+					objectAnimator.start();
+					
+					anim = new TranslateAnimation(0, 0,
+							buttomLayoutItemHeight,
 					 0);
-					 anim.setFillAfter(true);
+					anim.setFillAfter(true);
 					 anim.setDuration(500);
 					 anim.setAnimationListener(new AnimationListener() {
 					
@@ -239,9 +254,10 @@ public class PersonFragment extends Activity {
 					
 					 @Override
 					 public void onAnimationEnd(Animation animation) {
+						 haveScroll = false;
 					 }
 					 });
-					 bottom_layout.startAnimation(anim);
+//					 bottom_layout.startAnimation(anim);
 //					 bottom_layout.requestLayout();
 				}
 //				else if(scrollState == OnScrollListener.SCROLL_STATE_IDLE || scrollState == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
@@ -308,10 +324,11 @@ public class PersonFragment extends Activity {
 					int visibleItemCount, int totalItemCount) {
 					LogUtils.d("point--"+point);
 					LogUtils.i("buttomLayoutItemHeight-="+buttomLayoutItemHeight);
-				if(0 < point && point <= buttomLayoutItemHeight){
-					
+				if( point >= 0 && point <= buttomLayoutItemHeight ){
 					bottom_layout.setTranslationY(point);
 					LogUtils.i("the bottom=="+bottom_layout.getY());
+				}else {
+					
 				}
 				
 			}

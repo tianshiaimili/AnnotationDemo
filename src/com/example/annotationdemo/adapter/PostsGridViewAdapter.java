@@ -12,13 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.annotationdemo.R;
-import com.example.annotationdemo.bean.PostsNewBean;
+import com.example.annotationdemo.bean.PostsRecommendBean;
 
-public class GridViewAdapter extends BaseAdapter{
+public class PostsGridViewAdapter extends BaseAdapter{
 
 	private Context mContext;
-	private List<PostsNewBean> listBeans;
-	public GridViewAdapter(Context context,List<PostsNewBean> list){
+	private List<PostsRecommendBean> listBeans;
+	public PostsGridViewAdapter(Context context,List<PostsRecommendBean> list){
 		this.mContext = context;
 		this.listBeans = list;
 	}
@@ -26,7 +26,7 @@ public class GridViewAdapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return listBeans.get(0).getOtherRecommend().size();
+		return listBeans.get(0).getRecommend().size();
 	}
 
 	@Override
@@ -54,13 +54,13 @@ public class GridViewAdapter extends BaseAdapter{
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		holder.option.setText(listBeans.get(0).getOtherRecommend().get(position));
+		holder.option.setText(listBeans.get(0).getRecommend().get(position));
 		holder.option.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 			
-				Toast.makeText(mContext, listBeans.get(0).getOtherRecommend().get(position), 300).show();
+				Toast.makeText(mContext, listBeans.get(0).getRecommend().get(position), 300).show();
 				
 			}
 		});

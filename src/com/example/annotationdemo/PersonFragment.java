@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
@@ -22,23 +24,29 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.annotationdemo.adapter.GalleryAdapter;
-import com.example.annotationdemo.adapter.GridViewAdapter;
 import com.example.annotationdemo.adapter.PersonListAdapter;
+import com.example.annotationdemo.adapter.PostsGridViewAdapter;
 import com.example.annotationdemo.bean.Person;
-import com.example.annotationdemo.bean.PostsNewBean;
+import com.example.annotationdemo.bean.PostsRecommendBean;
 import com.example.annotationdemo.fragment.MyFragment;
 import com.example.annotationdemo.fragment.ThreeFragment_;
 import com.example.annotationdemo.impl.InMemoryPersonFinder;
@@ -46,26 +54,22 @@ import com.example.annotationdemo.utils.LogUtils;
 import com.example.annotationdemo.utils.PreferenceUtils;
 import com.example.annotationdemo.view.CustomGridView;
 
-
-
 /**
  * Created by test on 2015/7/2.
  */
 @EActivity(R.layout.person_list)
 public class PersonFragment extends Activity {
-	
-	private int[] imageId = new int[]{
-			R.drawable.bg01,R.drawable.bg02,R.drawable.bg03,
-			R.drawable.bg04,R.drawable.bg05
-	};
-	
+
+	private int[] imageId = new int[] { R.drawable.bg01, R.drawable.bg02,
+			R.drawable.bg03, R.drawable.bg04, R.drawable.bg05 };
+
 	@ViewById
 	ListView personList;
 
 	Gallery gallery;
-	
+
 	GalleryAdapter galleryAdapter;
-	
+
 	@Bean
 	InMemoryPersonFinder finder;
 
@@ -78,31 +82,65 @@ public class PersonFragment extends Activity {
 	MyFragment myFragment;
 
 	@StringArrayRes(R.array.other_recommend)
-	String[] others ;
-	
-    
-    /**这是底部显示的tab item部分 ，这里主要是想滑动listview 实现隐藏*/
+	String[] others;
+
+	/** 这是底部显示的tab item部分 ，这里主要是想滑动listview 实现隐藏 */
 	@ViewById(R.id.bottom_layout)
-    LinearLayout bottom_layout;
+	LinearLayout bottom_layout;
 	private int buttomLayoutItemHeight;
 	private TranslateAnimation anim;
-	
-	private LinearLayout foodViewLayout;
-	private CustomGridView gridView;
-	private GridViewAdapter gridViewAdapter;
-	private List<PostsNewBean> postsNewBeans;
 
+	private LinearLayout foodViewLayout;
 	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-    	// TODO Auto-generated method stub
-    	super.onCreate(savedInstanceState);
-    	
-    	foodViewLayout = (LinearLayout) LayoutInflater.from(this).inflate(R.layout.footlayout, null);
-    	gridView = (CustomGridView) foodViewLayout.findViewById(R.id.gridview);
-    	gallery = (Gallery) foodViewLayout.findViewById(R.id.gallery);
-    }
-	
+	private CustomGridView gridView;
+	private PostsGridViewAdapter gridViewAdapter;
+	private List<PostsRecommendBean> postsNewBeans;
+	private Timer timer;
+	private int startPoint;
+	private int endPoint;
+	private int tempPoint;
+	private int point;
+	private boolean isStart;
+
+	Handler mHandler = new Handler() {
+
+		public void handleMessage(Message msg) {
+			if (msg.what == 1) {
+				if (bottom_layout.getHeight() != 0) {
+					buttomLayoutItemHeight = bottom_layout.getHeight();
+					LogUtils.i("LinearLayoutW", bottom_layout.getWidth() + "");
+					LogUtils.i("LinearLayoutH", bottom_layout.getHeight() + "");
+					// 取消定时器
+					timer.cancel();
+
+				}
+			}
+		};
+
+	};
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+
+		foodViewLayout = (LinearLayout) LayoutInflater.from(this).inflate(
+				R.layout.footlayout, null);
+		gridView = (CustomGridView) foodViewLayout.findViewById(R.id.gridview);
+		gallery = (Gallery) foodViewLayout.findViewById(R.id.gallery);
+		gallery.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				
+				Toast.makeText(getApplicationContext(), "position ="+position, 300).show();
+				
+			}
+		});
+		getbottomWidth();
+	}
+
 	@AfterViews
 	void bindAdapter() {
 
@@ -125,91 +163,186 @@ public class PersonFragment extends Activity {
 
 		galleryAdapter = new GalleryAdapter(this);
 		gallery.setAdapter(galleryAdapter);
-		
+
 		//
 		setFVAdapterData();
-		gridViewAdapter = new GridViewAdapter(this, postsNewBeans);
+		gridViewAdapter = new PostsGridViewAdapter(this, postsNewBeans);
 		gridView.setAdapter(gridViewAdapter);
 		//
 		personList.addFooterView(foodViewLayout);
-//		adapter.setData(list);
+		// adapter.setData(list);
 		personList.setAdapter(adapter);
-		personList.setOnScrollListener(new OnScrollListener() {
+		personList.setOnTouchListener(new OnTouchListener() {
 			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				
+				int action = event.getAction();
+				switch (action) {
+				case MotionEvent.ACTION_DOWN:
+
+					break;
+					
+				case MotionEvent.ACTION_MOVE:
+					startPoint = Math.abs((int)event.getY());
+					if(!isStart){
+						isStart = true;
+						tempPoint = startPoint;
+					}
+//					LogUtils.e("startPoint--="+startPoint);
+					int tempY = Math.abs((int) event.getY());
+//					LogUtils.w("tempY--="+tempY);
+					point = Math.abs( tempY - tempPoint);
+
+					break;
+					
+					
+				case MotionEvent.ACTION_UP:
+					point =  0;
+					isStart = false;
+					
+					break;
+
+				default:
+					break;
+				}
+				
+				return false;
+			}
+		});
+		personList.setOnScrollListener(new OnScrollListener() {
+
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 				
+				// /
+				if(buttomLayoutItemHeight == 0) return;
 				if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
-					bottom_layout.setVisibility(View.VISIBLE);
-					anim = new TranslateAnimation(0, 0, bottom_layout.getHeight(),
-							0);
-					anim.setFillAfter(true);
-					anim.setDuration(500);
-					anim.setAnimationListener(new AnimationListener() {
-						
-						@Override
-						public void onAnimationStart(Animation animation) {
-							
-						}
-						
-						@Override
-						public void onAnimationRepeat(Animation animation) {
-							
-						}
-						
-						@Override
-						public void onAnimationEnd(Animation animation) {
-						}
-					});
-					bottom_layout.startAnimation(anim);
-				}else if(scrollState == OnScrollListener.SCROLL_STATE_FLING){
-					LogUtils.d("SCROLL_STATE_TOUCH_SCROLL--");
-					bottom_layout.setVisibility(View.VISIBLE);
-					anim = new TranslateAnimation(0, 0, 0,
-							bottom_layout.getHeight());
-					anim.setFillAfter(true);
-					anim.setDuration(500);
-					anim.setAnimationListener(new AnimationListener() {
-						
-						@Override
-						public void onAnimationStart(Animation animation) {
-							
-						}
-						
-						@Override
-						public void onAnimationRepeat(Animation animation) {
-							
-						}
-						
-						@Override
-						public void onAnimationEnd(Animation animation) {
-						}
-					});
-					bottom_layout.startAnimation(anim);
+					LogUtils.i("the bottom****"+bottom_layout.getY());
+					LogUtils.i("the buttomLayoutItemHeight****"+buttomLayoutItemHeight);
+					 anim = new TranslateAnimation(0, 0,
+					 bottom_layout.getHeight(),
+					 0);
+					 anim.setFillAfter(true);
+					 anim.setDuration(500);
+					 anim.setAnimationListener(new AnimationListener() {
 					
+					 @Override
+					 public void onAnimationStart(Animation animation) {
+					
+					 }
+					
+					 @Override
+					 public void onAnimationRepeat(Animation animation) {
+					
+					 }
+					
+					 @Override
+					 public void onAnimationEnd(Animation animation) {
+					 }
+					 });
+					 bottom_layout.startAnimation(anim);
+//					 bottom_layout.requestLayout();
 				}
+//				else if(scrollState == OnScrollListener.SCROLL_STATE_IDLE || scrollState == OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
+//					
+//					if(point <= buttomLayoutItemHeight){
+//						bottom_layout.setTranslationY(-point);
+//					}
+//					
+//				}
+				// if(scrollState == OnScrollListener.SCROLL_STATE_IDLE){
+				// bottom_layout.setVisibility(View.VISIBLE);
+				// anim = new TranslateAnimation(0, 0,
+				// bottom_layout.getHeight(),
+				// 0);
+				// anim.setFillAfter(true);
+				// anim.setDuration(500);
+				// anim.setAnimationListener(new AnimationListener() {
+				//
+				// @Override
+				// public void onAnimationStart(Animation animation) {
+				//
+				// }
+				//
+				// @Override
+				// public void onAnimationRepeat(Animation animation) {
+				//
+				// }
+				//
+				// @Override
+				// public void onAnimationEnd(Animation animation) {
+				// }
+				// });
+				// bottom_layout.startAnimation(anim);
+				// }else if(scrollState == OnScrollListener.SCROLL_STATE_FLING){
+				// LogUtils.d("SCROLL_STATE_TOUCH_SCROLL--");
+				// bottom_layout.setVisibility(View.VISIBLE);
+				// anim = new TranslateAnimation(0, 0, 0,
+				// bottom_layout.getHeight());
+				// anim.setFillAfter(true);
+				// anim.setDuration(500);
+				// anim.setAnimationListener(new AnimationListener() {
+				//
+				// @Override
+				// public void onAnimationStart(Animation animation) {
+				//
+				// }
+				//
+				// @Override
+				// public void onAnimationRepeat(Animation animation) {
+				//
+				// }
+				//
+				// @Override
+				// public void onAnimationEnd(Animation animation) {
+				// }
+				// });
+				// bottom_layout.startAnimation(anim);
+				//
+				// }
 			}
-			
+
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem,
 					int visibleItemCount, int totalItemCount) {
+					LogUtils.d("point--"+point);
+					LogUtils.i("buttomLayoutItemHeight-="+buttomLayoutItemHeight);
+				if(0 < point && point <= buttomLayoutItemHeight){
+					
+					bottom_layout.setTranslationY(point);
+					LogUtils.i("the bottom=="+bottom_layout.getY());
+				}
 				
 			}
 		});
 
 	}
 
-	
-	
-	public void setFVAdapterData(){
-		
-		postsNewBeans = new ArrayList<PostsNewBean>();
-		PostsNewBean bean = new PostsNewBean();
-		bean.setOtherRecommend(Arrays.asList(others));
-		postsNewBeans.add(bean);
-		
+	public void getbottomWidth() {
+
+		timer = new Timer();
+		TimerTask task = new TimerTask() {
+			public void run() {
+				Message message = new Message();
+				message.what = 1;
+				mHandler.sendMessage(message);
+			}
+		};
+		// 延迟每次延迟10 毫秒 隔1秒执行一次
+		timer.schedule(task, 10, 500);
+
 	}
-	
+
+	public void setFVAdapterData() {
+
+		postsNewBeans = new ArrayList<PostsRecommendBean>();
+		PostsRecommendBean bean = new PostsRecommendBean();
+		bean.setRecommend(Arrays.asList(others));
+		postsNewBeans.add(bean);
+
+	}
+
 	@ItemClick
 	void personListItemClicked(Person person) {
 		// makeText(this, person.firstName + " " + person.lastName,

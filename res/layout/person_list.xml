@@ -23,7 +23,8 @@
         android:id="@+id/personList"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_below="@id/testFragment" >
+        android:layout_below="@id/testFragment" 
+        >
     </ListView>
 
     <LinearLayout

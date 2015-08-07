@@ -16,6 +16,8 @@ import org.androidannotations.annotations.ItemLongClick;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.res.StringArrayRes;
 
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,8 +35,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
-import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
@@ -232,7 +233,32 @@ public class PersonFragment extends Activity {
 					////////////////////ObjectAnimator 比较简单点
 					ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(bottom_layout, "translationY", buttomLayoutItemHeight,0);
 					objectAnimator.setDuration(500);
-					objectAnimator.setInterpolator(new BounceInterpolator());
+					objectAnimator.setInterpolator(new DecelerateInterpolator());
+					objectAnimator.addListener(new AnimatorListener() {
+						
+						@Override
+						public void onAnimationStart(Animator animation) {
+							
+						}
+						
+						@Override
+						public void onAnimationRepeat(Animator animation) {
+							// TODO Auto-generated method stub
+							
+						}
+						
+						@Override
+						public void onAnimationEnd(Animator animation) {
+							haveScroll = false;
+							
+						}
+						
+						@Override
+						public void onAnimationCancel(Animator animation) {
+							// TODO Auto-generated method stub
+							
+						}
+					});
 					objectAnimator.start();
 					
 					anim = new TranslateAnimation(0, 0,
@@ -324,11 +350,11 @@ public class PersonFragment extends Activity {
 					int visibleItemCount, int totalItemCount) {
 					LogUtils.d("point--"+point);
 					LogUtils.i("buttomLayoutItemHeight-="+buttomLayoutItemHeight);
-				if( point >= 0 && point <= buttomLayoutItemHeight ){
+				if( point >= 0 && point <= buttomLayoutItemHeight && !haveScroll){
 					bottom_layout.setTranslationY(point);
 					LogUtils.i("the bottom=="+bottom_layout.getY());
-				}else {
-					
+				}else if(point > buttomLayoutItemHeight){
+					haveScroll = true;
 				}
 				
 			}

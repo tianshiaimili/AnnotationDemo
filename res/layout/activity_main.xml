@@ -54,6 +54,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="兴趣叶选择" />
+
+            <Button
+                android:id="@+id/test8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="测试底部滑动隐藏" />
         </LinearLayout>
     </ScrollView>
 

@@ -157,4 +157,13 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	
+	@Click
+	void test9(){
+		
+		Intent intent = new Intent(this,CreditActivity_.class);
+		startActivity(intent);
+		
+	}
+	
 }

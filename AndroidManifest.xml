@@ -82,7 +82,8 @@
         
         <activity android:name=".MultipleItemsList"></activity>
         <activity android:name=".CreamDetail_"></activity>
-		<activity android:name=".testactivity.PostsActvity_"/>        
+		<activity android:name=".testactivity.PostsActvity_"/>    
+		<activity android:name=".CreditActivity_"></activity>    
     </application>
 
 </manifest>

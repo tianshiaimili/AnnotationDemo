@@ -4,6 +4,7 @@ import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
 import android.annotation.SuppressLint;
@@ -30,6 +31,40 @@ import com.example.annotationdemo.utils.LogUtils;
 @EActivity(R.layout.webview_video)
 public class WebViewPlayer extends Activity{
 
+//    intent = new Intent(getActivity(), VODWebActivity_.class);
+//    intent.putExtra("id", videoEntity.getData().getId());
+//    intent.putExtra("url", videoEntity.getData().getUrl());
+//    intent.putExtra("adType", videoEntity.getData().getAdType());
+//    intent.putExtra("uid", userInfoUtil.getUid());
+//    intent.putExtra("code", PassportUtil.getCode(getActivity()));
+//    intent.putExtra("app", "mmq");
+//    intent.putExtra("source", 1);
+//    intent.putExtra("wifiOn",  PhoneInfoUtil.getInstance(getActivity()).getNetType().equals("WIFI")?1:0);
+	
+	@Extra("id")
+	String id;
+	
+	@Extra("url")
+	String url;
+	
+	@Extra("adType")
+	int adType;
+	
+	@Extra("uid")
+	String uid;
+	
+	@Extra("code")
+	String code;
+	
+	@Extra("app")
+	String app;
+	
+	@Extra("source")
+	int source;
+	
+	@Extra("wifiOn")
+	int wifiOn;
+	
 	@ViewById
 	Button back_btn,switch_btn;
 	

@@ -8,12 +8,13 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.ViewById;
 
-import com.example.annotationdemo.utils.LogUtils;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.annotationdemo.utils.LogUtils;
 
 @EActivity(R.layout.activity_with_extra)
 public class ActivityWithExtra extends Activity {
@@ -40,7 +41,7 @@ public class ActivityWithExtra extends Activity {
 	@Extra(MY_INT_EXTRA)
 	String classCastExceptionExtra /*= "classCastExceptionExtraDefaultValue"*/;
 
-	
+	 int wifiString = ConnectivityManager.TYPE_WIFI;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

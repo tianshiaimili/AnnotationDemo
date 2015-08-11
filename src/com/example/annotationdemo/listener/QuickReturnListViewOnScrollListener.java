@@ -40,7 +40,6 @@ public class QuickReturnListViewOnScrollListener implements AbsListView.OnScroll
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-//        Log.d(getClass().getSimpleName(), "onScrollStateChanged() : scrollState - "+scrollState);
         // apply another list' s on scroll listener
         for (AbsListView.OnScrollListener listener : mExtraOnScrollListenerList) {
           listener.onScrollStateChanged(view, scrollState);

@@ -11,6 +11,8 @@ import com.example.annotationdemo.R;
 import com.example.annotationdemo.adapter.TestAdapter;
 import com.example.annotationdemo.listener.QuickReturnListViewOnScrollListener;
 import com.example.annotationdemo.listener.QuickReturnType;
+import com.example.annotationdemo.utils.LogUtils;
+import com.example.annotationdemo.utils.PhoneInfoUtil;
 import com.example.annotationdemo.view.RefleshListView;
 
 @EActivity(R.layout.posts_layout)
@@ -36,8 +38,13 @@ public class PostsActvity extends Activity{
 		listView.setOnScrollListener(new QuickReturnListViewOnScrollListener(QuickReturnType.FOOTER, null, 0, bottom_layout, footerHeight).setCanSlideInIdleScrollState(true));
 		listView.setLoadMoreable(true);
 		
+		PhoneInfoUtil util = PhoneInfoUtil.getInstance(this);
+		String type = util.getNetType();
+		LogUtils.e("type ="+type);
 		
 	}
+	
+	
 	
 	
 }

@@ -29,7 +29,7 @@ public class MyObject {
 						+ "')");
 			}
 		});
-	}
+	}     
 
 	public static String getJsonStr() {
 		try {

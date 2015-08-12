@@ -7,6 +7,7 @@
 	//data数据类型为字符串，字符串里面是数组，每一个数组元素为一个json对象，例如"[{id:1,name:'张三',phone:'135656461'},{id:2,name:'李四',phone:'1896561'}]"
 	function setContactInfo(data) {
 		var tableObj = document.getElementById("contact");
+		 alert("1");
 		//通过eval方法处理得到json对象数组
 		var jsonObjects = eval(data);
 		for (var i = 0; i < jsonObjects.length; i++) {

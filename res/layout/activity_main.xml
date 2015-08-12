@@ -66,6 +66,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="积分兑换" />
+            
+                        <Button
+                android:id="@+id/test10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="webview和js" />
+            
         </LinearLayout>
     </ScrollView>
 

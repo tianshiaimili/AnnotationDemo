@@ -63,11 +63,11 @@ public class KitkatCompatWebview extends WebView {
         init();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public KitkatCompatWebview(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
+//    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+//    public KitkatCompatWebview(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//        super(context, attrs, defStyleAttr, defStyleRes);
+//        init();
+//    }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public KitkatCompatWebview(Context context, AttributeSet attrs, int defStyleAttr, boolean privateBrowsing) {

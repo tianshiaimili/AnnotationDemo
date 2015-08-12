@@ -166,4 +166,12 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	@Click
+	void test10(){
+		
+		Intent intent = new Intent(this,HTMLActivity.class);
+		startActivity(intent);
+		
+	}
+	
 }

@@ -1,5 +1,24 @@
 package com.example.annotationdemo;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+//
+//import cn.mama.http.MmRequest;
+//import cn.mama.http.MmResponseListener;
+//import cn.mama.http.RequestHelper;
+//import cn.mama.http.Result;
+//import cn.mama.util.DataParser;
+//import cn.mama.util.ErroeMessageUtil;
+//import cn.mama.util.UrlPath;
+
+import org.androidannotations.annotations.AfterInject;
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -15,10 +34,12 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewStub;
+import android.webkit.CookieManager;
+import android.webkit.HttpAuthHandler;
 import android.webkit.JavascriptInterface;
-import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebSettings.PluginState;
 import android.webkit.WebSettings.ZoomDensity;
@@ -29,20 +50,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.androidannotations.annotations.AfterInject;
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.Extra;
-import org.androidannotations.annotations.ViewById;
-
-import com.example.annotationdemo.view.KitkatCompatWebview;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Stack;
-
+import com.example.annotationdemo.utils.LogUtils;
 
 /**
  * Version 1.0.1
@@ -82,9 +90,9 @@ import java.util.Stack;
  */
 @SuppressLint("NewApi")
 @EActivity(R.layout.duiba)
-public class CreditActivity extends Activity {
+public class CopyOfCreditActivity extends Activity {
 	private static String ua;
-	private static Stack<CreditActivity> activityStack;
+	private static Stack<CopyOfCreditActivity> activityStack;
 	public static final String MyVERSION ="1.0.5";
     public static CreditsListener creditsListener;
 
@@ -114,11 +122,12 @@ public class CreditActivity extends Activity {
     protected Boolean ifRefresh = false;
     protected Boolean delayRefresh = false;
 
+    protected String navColor;
+    protected String titleColor;
     protected Long shareColor;
-//    private ActivityManager activityManager;
 
     @ViewById
-    KitkatCompatWebview duiba_wv;
+    WebView duiba_wv;
     @ViewById
     ImageView back_img;
     @ViewById
@@ -129,18 +138,14 @@ public class CreditActivity extends Activity {
     ProgressBar progress_bar;
     @ViewById
     LinearLayout dialogbody;
-    @Extra("firstIn")
-    String firstIn;
-    private boolean isFirst;
 
     @ViewById
     ViewStub vs_error;
     private View errorView;
 //    private ErroeMessageUtil erroeMessageUtil;
-    private boolean isSetWebSetting;
 
-//    @Extra("urlPath")
-    String urlPath ="http://www.duiba.com.cn/test/demoRedirectSAdfjosfdjdsa";
+//    @Extra("url")
+    String url = "http://www.duiba.com.cn/test/demoRedirectSAdfjosfdjdsa";
 //    protected LinearLayout mLinearLayout;
 //    protected RelativeLayout mNavigationBar;
 //    protected TextView mTitle;
@@ -152,10 +157,10 @@ public class CreditActivity extends Activity {
     @AfterInject
     void initVariable(){
 
-//        if (activityStack == null) {
-//            activityStack = new Stack<CreditActivity>();
-//        }
-//        activityStack.push(this);
+        if (activityStack == null) {
+            activityStack = new Stack<CopyOfCreditActivity>();
+        }
+        activityStack.push(this);
 
     }
 
@@ -167,26 +172,15 @@ public class CreditActivity extends Activity {
 
     @AfterViews
     void init(){
-
-        if (activityStack == null) {
-            activityStack = new Stack<CreditActivity>();
-        }
-        activityStack.push(this);
-
-//        代理
-        if(ua==null){
-            ua= duiba_wv.getSettings().getUserAgentString()+" Duiba/"+ MyVERSION;
-        }
-        duiba_wv.getSettings().setUserAgentString(ua);
-
-        //
-//        if(firstIn != null && firstIn.equals("0")){
-//            dialogbody.setVisibility(View.VISIBLE);
-////            requestUrl();
-//        }else {
-            dialogbody.setVisibility(View.GONE);
-//            urlPath = getIntent().getStringExtra("urlPath");
+        //代理
+//        if(ua==null){
+//            ua= duiba_wv.getSettings().getUserAgentString()+" Duiba/"+ MyVERSION;
 //        }
+//        duiba_wv.getSettings().setUserAgentString(ua);
+        dialogbody.setVisibility(View.VISIBLE);
+        //
+        requestUrl();
+
 //        erroeMessageUtil = new ErroeMessageUtil(this);
 //        erroeMessageUtil.setOnClickListener(new ErroeMessageUtil.onClickListener() {
 //
@@ -197,7 +191,7 @@ public class CreditActivity extends Activity {
 //            }
 //        });
         //初始化WebView配置
-        initWebView(null);
+        initWebView();
 
     }
 
@@ -206,7 +200,7 @@ public class CreditActivity extends Activity {
         onBackClick();
     }
 
-//    public void requestUrl(){
+    public void requestUrl(){
 //            dialogbody.setVisibility(View.VISIBLE);
 //            HashMap<String, String> params = new HashMap<String, String>();
 //            params.put("uid", userInfoUtil.getUid());
@@ -241,24 +235,19 @@ public class CreditActivity extends Activity {
 //                    }
 ////                    adapter.notifyDataSetChanged();
 //                    showErrorMessage(ErroeMessageUtil.ERROR_NO_MASTER_DATA);
-//                    //super.onPtError(urlPath, errorMsg);
+//                    //super.onPtError(url, errorMsg);
 //                }
 //            });
 //            addQueue(request);
-//    }
-//
-//    public void  datacallback(String result){
-//        if(result != null){
-//            urlPath =  DataParser.getOneValueInData(result, "url");
-//            if(isSetWebSetting) {
-//                duiba_wv.loadUrl(urlPath);
-//
-//            }else {
-//                initWebView(urlPath);
-//            }
-//        }
-//
-//    };
+    }
+
+    public void  datacallback(String result){
+        if(result != null){
+//            url =  DataParser.getOneValueInData(result, "url");
+//            duiba_wv.loadUrl(url);
+        }
+
+    };
 
     //配置分享信息
     protected void setShareInfo(String shareUrl,String shareThumbnail,String shareTitle,String shareSubtitle){
@@ -269,24 +258,28 @@ public class CreditActivity extends Activity {
     }
     
     protected void onBackClick(){
-//        Intent intent=new Intent();
-//        setResult(99, intent);
+        Intent intent=new Intent();
+        setResult(99, intent);
         finishActivity(this);
     }
 
 
     //初始化WebView配置
-    protected void initWebView(String reposneUrl){
+    protected void initWebView(){
         WebSettings settings = duiba_wv.getSettings();
+
         // User settings
         settings.setJavaScriptEnabled(true);	//设置webview支持javascript
         settings.setDefaultTextEncodingName("UTF-8");
-//        settings.setLoadsImagesAutomatically(true);	//支持自动加载图片
+        settings.setLoadsImagesAutomatically(true);	//支持自动加载图片
         settings.setUseWideViewPort(true);	//设置webview推荐使用的窗口，使html界面自适应屏幕
         settings.setSaveFormData(true);	//设置webview保存表单数据
+        settings.setSavePassword(true);	//设置webview保存密码
         settings.setDefaultZoom(ZoomDensity.MEDIUM);	//设置中等像素密度，medium=160dpi
         settings.setSupportZoom(true);	//支持缩放
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);// 打开缓存，如果没有网络
+
+        CookieManager.getInstance().setAcceptCookie(true);
 
         if (android.os.Build.VERSION.SDK_INT > 8) {
             settings.setPluginState(PluginState.ON_DEMAND);
@@ -296,34 +289,19 @@ public class CreditActivity extends Activity {
         settings.setSupportMultipleWindows(true);
         duiba_wv.setLongClickable(true);
         duiba_wv.setScrollbarFadingEnabled(true);
-        duiba_wv.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        duiba_wv.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         duiba_wv.setDrawingCacheEnabled(true);
-
-        settings.setUseWideViewPort(true);
 
         settings.setAppCacheEnabled(true);
         settings.setDatabaseEnabled(true);
-
-        String dir = this.getApplicationContext().getDir("database", Context.MODE_PRIVATE).getPath();
-        // 启用地理定位
-        settings.setGeolocationEnabled(true);
-        // 设置定位的数据库路径
-        settings.setGeolocationDatabasePath(dir);
-
         settings.setDomStorageEnabled(true);
 
 
         duiba_wv.setWebChromeClient(new WebChromeClient() {
             @Override
-            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                return super.onJsAlert(view, url, message, result);
-            }
-
-            @Override
             public void onReceivedTitle(WebView view, String title) {
-                CreditActivity.this.onReceivedTitle(view, title);
+                CopyOfCreditActivity.this.onReceivedTitle(view, title);
             }
-
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
@@ -338,7 +316,31 @@ public class CreditActivity extends Activity {
         });
 
         duiba_wv.setWebViewClient(new WebViewClient() {
+        	
+        	
+        	
             @Override
+			public void onLoadResource(WebView view, String url) {
+            	LogUtils.i("onLoadResource--");
+				super.onLoadResource(view, url);
+			}
+
+
+			@Override
+			public void onReceivedHttpAuthRequest(WebView view,
+					HttpAuthHandler handler, String host, String realm) {
+				LogUtils.i("onReceivedHttpAuthRequest--");
+				super.onReceivedHttpAuthRequest(view, handler, host, realm);
+			}
+
+			@Override
+			public WebResourceResponse shouldInterceptRequest(WebView view,
+					String url) {
+				LogUtils.i("shouldInterceptRequest--");
+				return super.shouldInterceptRequest(view, url);
+			}
+
+			@Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 return shouldOverrideUrlByDuiba(view, url);
             }
@@ -346,7 +348,7 @@ public class CreditActivity extends Activity {
             //页面加载结束时获取页面分享信息，如含分享信息，则导航栏上显示分享按钮
             @Override
             public void onPageFinished(WebView view, String url) {
-                view.loadUrl("javascript:if(document.getElementById('duiba-share-urlPath')){duiba_app.shareInfo(document.getElementById(\"duiba-share-urlPath\").getAttribute(\"content\"));}");
+                view.loadUrl("javascript:if(document.getElementById('duiba-share-url')){duiba_app.shareInfo(document.getElementById(\"duiba-share-url\").getAttribute(\"content\"));}");
                 super.onPageFinished(view, url);
             }
         });
@@ -380,15 +382,7 @@ public class CreditActivity extends Activity {
             }
         }, "duiba_app");
 
-        isSetWebSetting = true;
-
-//        if(firstIn != null && firstIn.equals("0") || reposneUrl != null){
-//            duiba_wv.loadUrl(reposneUrl);
-//        }else {
-//            duiba_wv.loadUrl(urlPath);
-//        }
-        
-        duiba_wv.loadUrl(urlPath);
+        duiba_wv.loadUrl(url);
 
     }
 
@@ -404,7 +398,9 @@ public class CreditActivity extends Activity {
      * @return
      */
     protected boolean shouldOverrideUrlByDuiba(WebView view,String url){
-        if(this.urlPath.equals(url)){
+    	LogUtils.d("thisUrl---="+this.url);
+    	LogUtils.i("url---="+url);
+        if(this.url.equals(url)){
             view.loadUrl(url);
             return true;
         }
@@ -412,18 +408,25 @@ public class CreditActivity extends Activity {
             return false;
         }
         if(url.contains("dbnewopen")){	//新开页面
+        	LogUtils.d("dbnewopen----"+url);
             Intent intent = new Intent();
-            intent.setClass(CreditActivity.this, CreditActivity.this.getClass());
+            intent.setClass(CopyOfCreditActivity.this, CopyOfCreditActivity.this.getClass());
+            intent.putExtra("navColor", navColor);
+            intent.putExtra("titleColor", titleColor);
             url = url.replace("dbnewopen", "none");
-            intent.putExtra("urlPath", url);
+            intent.putExtra("url", url);
             startActivityForResult(intent, RequestCode);
         }else if(url.contains("dbbackrefresh")){	//后退并刷新
+        	LogUtils.d("dbbackrefresh----"+url);
             url = url.replace("dbbackrefresh", "none");
             Intent intent = new Intent();
-            intent.putExtra("urlPath", url);
+            intent.putExtra("url", url);
+            intent.putExtra("navColor", navColor);
+            intent.putExtra("titleColor", titleColor);
             setResult(RequestCode,intent);
             finishActivity(this);
         }else if (url.contains("dbbackrootrefresh")){	//回到积分商城首页并刷新
+        	LogUtils.d("dbbackrootrefresh----"+url);
             url = url.replace("dbbackrootrefresh", "none");
             if(activityStack.size()==1){
             	finishActivity(this);
@@ -432,6 +435,7 @@ public class CreditActivity extends Activity {
                 finishUpActivity();
             }
         }else if (url.contains("dbbackroot")){	//回到积分商城首页
+        	LogUtils.d("dbbackroot----"+url);
             url = url.replace("dbbackroot", "none");
             if(activityStack.size()==1){
             	finishActivity(this);
@@ -460,9 +464,9 @@ public class CreditActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if(resultCode==100){
-            if(intent.getStringExtra("urlPath")!=null){
-                this.urlPath =intent.getStringExtra("urlPath");
-                duiba_wv.loadUrl(this.urlPath);
+            if(intent.getStringExtra("url")!=null){
+                this.url=intent.getStringExtra("url");
+                duiba_wv.loadUrl(this.url);
                 ifRefresh = false;
             }
         }
@@ -472,8 +476,8 @@ public class CreditActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		if (ifRefresh) {
-//			this.urlPath = getIntent().getStringExtra("urlPath");
-			duiba_wv.loadUrl(this.urlPath);
+//			this.url = getIntent().getStringExtra("url");
+			duiba_wv.loadUrl(this.url);
 			ifRefresh = false;
 		} else if (delayRefresh) {
 			duiba_wv.reload();
@@ -484,7 +488,7 @@ public class CreditActivity extends Activity {
 				duiba_wv.evaluateJavascript("if(window.onDBNewOpenBack){onDBNewOpenBack()}", new ValueCallback<String>() {
                     @Override
                     public void onReceiveValue(String value) {
-                        Log.e("credits", "刷新积分ooooovalue="+value);
+                        Log.e("credits", "刷新积分");
                     }
                 });
 			} else {
@@ -497,8 +501,7 @@ public class CreditActivity extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK){
             onBackClick();
-            finish();
-            return  true;
+            return true;
         }else{
             return super.onKeyDown(keyCode, event);
         }
@@ -523,9 +526,6 @@ public class CreditActivity extends Activity {
         if (activity != null) {
             activityStack.remove(activity);
             activity.finish();
-            if(activityStack.size() == 0){
-                activityStack = null;
-            }
         }
     }
     
@@ -659,3 +659,4 @@ public class CreditActivity extends Activity {
     }
 
 }
+

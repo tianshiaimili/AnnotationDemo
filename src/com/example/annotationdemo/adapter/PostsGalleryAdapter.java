@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.annotationdemo.R;
 import com.example.annotationdemo.view.ScaleImageView;
 
-public class GalleryAdapter extends BaseAdapter{
+public class PostsGalleryAdapter extends BaseAdapter{
 	
 	private int[] imageId = new int[]{
 			R.drawable.bg01,R.drawable.bg02,R.drawable.bg03,
@@ -18,7 +18,7 @@ public class GalleryAdapter extends BaseAdapter{
 	};
 	private Context mContext;
 	
-	public GalleryAdapter(Context context){ 
+	public PostsGalleryAdapter(Context context){ 
 		this.mContext = context;
 	}
 	

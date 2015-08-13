@@ -20,7 +20,7 @@ import com.example.annotationdemo.impl.InMemoryPersonFinder;
 /**
  * Created by test on 2015/7/2.
  */
-@EActivity(R.layout.person_list)
+@EActivity(R.layout.second_posts_list)
 public class PersonListActivity extends Activity{
     @ViewById
     ListView personList;

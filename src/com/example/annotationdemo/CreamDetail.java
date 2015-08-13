@@ -1,7 +1,6 @@
 package com.example.annotationdemo;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -10,21 +9,21 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.StringRes;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.annotationdemo.bean.PostsCreamBean;
 import com.example.annotationdemo.utils.LogUtils;
+import com.example.annotationdemo.view.RefleshListView;
 import com.example.annotationdemo.view.ScaleImageView;
 
 /**
@@ -36,7 +35,7 @@ import com.example.annotationdemo.view.ScaleImageView;
 public class CreamDetail extends Activity {  
 	   
 	@ViewById
-	ListView listview;
+	RefleshListView listview;
 	
 	@org.androidannotations.annotations.res.StringRes(R.string.poststest1)
 	String poststest1;
@@ -54,7 +53,6 @@ public class CreamDetail extends Activity {
 		for(int i = 0;i<10;i++){
 			
 			PostsCreamBean bean = new PostsCreamBean();
-
 			if(i >= 3){
 				bean.setId("ID - "+i);
 				bean.setDescTitle("这里是item2测试Title - "+i);
@@ -223,7 +221,13 @@ class CreamDetailAdapter extends BaseAdapter{
 				LogUtils.d("**-----------------------****");
 				viewHoldePosts.title_layout.setVisibility(View.VISIBLE);
 				viewHoldePosts.adapter_item_title.setText("妈妈经验哦");
+				Drawable drawable = context.getResources().getDrawable(R.drawable.details_experience);
+				viewHoldePosts.adapter_item_title.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
 				viewHoldePosts.adapter_item_sub_title.setText("全是精华 拿走吧");
+//				viewHoldePosts.adapter_item_sub_title.setm
+//				MarginLayoutParams params = new MarginLayoutParams(MarginLayoutParams.MATCH_PARENT, MarginLayoutParams.MATCH_PARENT);
+//				params.topMargin = 15;
+//				viewHoldePosts.adapter_item_sub_title.setLayoutParams(params);
 				viewHoldePosts.author.setText(bean.getAuto());
 				viewHoldePosts.bb_age.setText(bean.getAge());
 				viewHoldePosts.count.setText(bean.getAge());

@@ -124,7 +124,9 @@ public class WebViewPlayer extends Activity{
 		webView.setWebChromeClient(new DefaultWebChromeClient()); // 播放视频
 		webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		webView.getSettings().setLoadWithOverviewMode(true);
-		webView.loadUrl("http://www.iqiyi.com/a_19rrhaymat.html");
+//		http://v.163.com/paike/V8H1BIE6U/VAG52A1KT.html 网易视频
+//		http://www.iqiyi.com/a_19rrhaymat.html 爱奇艺视频
+		webView.loadUrl("http://v.163.com/paike/V8H1BIE6U/VAG52A1KT.html");
 	}
 	
 	

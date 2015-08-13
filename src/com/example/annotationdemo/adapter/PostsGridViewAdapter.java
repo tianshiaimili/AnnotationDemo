@@ -13,12 +13,13 @@ import android.widget.Toast;
 
 import com.example.annotationdemo.R;
 import com.example.annotationdemo.bean.PostsRecommendBean;
+import com.example.annotationdemo.bean.TestPostsBean;
 
 public class PostsGridViewAdapter extends BaseAdapter{
 
 	private Context mContext;
-	private List<PostsRecommendBean> listBeans;
-	public PostsGridViewAdapter(Context context,List<PostsRecommendBean> list){
+	private List<TestPostsBean> listBeans;
+	public PostsGridViewAdapter(Context context,List<TestPostsBean> list){
 		this.mContext = context;
 		this.listBeans = list;
 	}
@@ -26,7 +27,7 @@ public class PostsGridViewAdapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return listBeans.get(0).getRecommend().size();
+		return listBeans.size();
 	}
 
 	@Override
@@ -54,13 +55,13 @@ public class PostsGridViewAdapter extends BaseAdapter{
 			holder = (ViewHolder) convertView.getTag();
 		}
 		
-		holder.option.setText(listBeans.get(0).getRecommend().get(position));
+		holder.option.setText(listBeans.get(position).getMain_title());
 		holder.option.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 			
-				Toast.makeText(mContext, listBeans.get(0).getRecommend().get(position), 300).show();
+				Toast.makeText(mContext, listBeans.get(position).getMain_title(), 300).show();
 				
 			}
 		});

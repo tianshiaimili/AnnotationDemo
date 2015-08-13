@@ -110,8 +110,8 @@ public class MainActivity extends Activity {
 	@Click
 	void test3(){
 		
-		Intent intent = new Intent(this,PersonFragment_.class);
-		startActivity(intent);
+//		Intent intent = new Intent(this,PersonFragment_.class);
+//		startActivity(intent);
 		
 	}
 	
@@ -170,6 +170,15 @@ public class MainActivity extends Activity {
 	void test10(){
 		
 		Intent intent = new Intent(this,HTMLActivity.class);
+		startActivity(intent);
+		
+	}
+	
+	
+	@Click
+	void test11(){
+		
+		Intent intent = new Intent(this,PersonFragmentNew_.class);
 		startActivity(intent);
 		
 	}

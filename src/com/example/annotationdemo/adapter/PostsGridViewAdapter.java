@@ -13,13 +13,13 @@ import android.widget.Toast;
 
 import com.example.annotationdemo.R;
 import com.example.annotationdemo.bean.PostsRecommendBean;
-import com.example.annotationdemo.bean.TestPostsBean;
+import com.example.annotationdemo.bean.RecommendMessageBean;
 
 public class PostsGridViewAdapter extends BaseAdapter{
 
 	private Context mContext;
-	private List<TestPostsBean> listBeans;
-	public PostsGridViewAdapter(Context context,List<TestPostsBean> list){
+	private List<RecommendMessageBean> listBeans;
+	public PostsGridViewAdapter(Context context,List<RecommendMessageBean> list){
 		this.mContext = context;
 		this.listBeans = list;
 	}

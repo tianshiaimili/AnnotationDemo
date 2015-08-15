@@ -45,6 +45,7 @@ public class FreaturePostsCreamHeaderView extends AdapterItemView{
 
     public void setGalleryAdapter(BaseAdapter adapter){
         gallery.setAdapter(adapter);
+        gallery.setSelection(100);
         gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {

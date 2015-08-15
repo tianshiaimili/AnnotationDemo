@@ -55,19 +55,23 @@ public class QuickReturnUtils {
     }
 
     public static int getScrollY(AbsListView lv) {
-        View c = lv.getChildAt(0);
+//    	LogUtils.d("the lv=="+(lv));
+//    	LogUtils.i("the lv=="+(lv.getChildCount()));
+        View c = lv.getChildAt(0);//拿到的是当前屏幕可见的第一个item，而不是listview的第一个
+//        LogUtils.e("the c=="+(c));
         if (c == null) {
             return 0;
         }
 
         int firstVisiblePosition = lv.getFirstVisiblePosition();
         int scrollY = -(c.getTop());
+        LogUtils.d("the c.getTop()=="+(c.getTop()));
 //        int scrollY = 0;
 
 
 
         sListViewItemHeights.put(lv.getFirstVisiblePosition(), c.getHeight());
-
+        LogUtils.e("the firstVisiblePosition=="+(firstVisiblePosition));
 //        if(scrollY>0)
 //            Log.d("QuickReturnUtils", "getScrollY() : -(c.getTop()) - "+ -(c.getTop()));
 //        else
@@ -86,7 +90,7 @@ public class QuickReturnUtils {
 
         }
 
-//        Log.d("QuickReturnUtils", "getScrollY() : scrollY - "+scrollY);
+        LogUtils.d( "getScrollY() : scrollY - "+scrollY);
 
         return scrollY;
     }

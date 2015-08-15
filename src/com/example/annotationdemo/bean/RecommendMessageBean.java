@@ -2,7 +2,7 @@ package com.example.annotationdemo.bean;
 
 import java.io.Serializable;
 
-public class TestPostsBean implements Serializable{
+public class RecommendMessageBean implements Serializable{
 	
 	
 	String main_title;
@@ -10,7 +10,7 @@ public class TestPostsBean implements Serializable{
 	
 	
 	
-	public TestPostsBean(String main_title, String desc_title) {
+	public RecommendMessageBean(String main_title, String desc_title) {
 		super();
 		this.main_title = main_title;
 		this.desc_title = desc_title;

@@ -12,6 +12,7 @@ import org.androidannotations.annotations.ViewById;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.Button;
 
 import com.example.annotationdemo.testactivity.ChoiceInterest3_;
@@ -40,6 +41,8 @@ public class MainActivity extends Activity {
 		LogUtils.i("onCreate----");
 	}
 
+	
+	
 	@AfterInject
 	void afterInjectMethod(){
 		LogUtils.d("afterInjectMethod----");
@@ -49,6 +52,11 @@ public class MainActivity extends Activity {
 	@AfterViews
 	void AfterViewsMethod(){
 		LogUtils.d("AfterViewsMethod----");
+		
+		Html.fromHtml(getString(R.string.test1));
+//		test1.setText(Html.fromHtml(getString(R.string.test1)));
+		test1.setText(Html.fromHtml("<b> &lt;喀喀喀 &gt; </b> 换吧换吧 <\n>可以的"));
+//		test1.setText(getString(R.string.test1));
 		
 	}
 	

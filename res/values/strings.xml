@@ -4,6 +4,8 @@
     <string name="app_name">AnnotationDemo</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="test1"> &#060;b&#062; 都飞不搞  &#060;/b&#062;\n 哈换&#060;br&#062;哈asdhlkadlak&#060;br&#062;lakdhlakdlkadlakasdlaksdhlakdhal</string>
+    <!-- <b>想怎么飞<b>都飞不搞\n哈哈哈哈哈哈哈哈哈哈 -->
 
     <!-- 选择兴趣 -->
     <string name="interest_tip">点击选择兴趣，找到志同道合的好友</string>

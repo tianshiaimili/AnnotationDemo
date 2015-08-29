@@ -72,13 +72,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="webview和js" />
-            
-                        <Button
+
+            <Button
                 android:id="@+id/test11"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="精华的新page" />
-            
+
+            <Button
+                android:id="@+id/test12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="SpannableString" />
         </LinearLayout>
     </ScrollView>
 

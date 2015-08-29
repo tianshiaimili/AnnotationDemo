@@ -85,7 +85,9 @@
 		<activity android:name=".testactivity.PostsActvity_"/>    
 		<activity android:name=".CreditActivity_"></activity>    
 		<activity android:name=".HTMLActivity"></activity>
-		<activity android:name=".PersonFragmentNew_"></activity>   
+		<activity android:name=".PersonFragmentNew_"></activity>
+		<activity android:name=".SpannableActivity"></activity>
+		   
 		
     </application>
 

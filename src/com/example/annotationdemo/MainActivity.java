@@ -55,8 +55,9 @@ public class MainActivity extends Activity {
 		
 		Html.fromHtml(getString(R.string.test1));
 //		test1.setText(Html.fromHtml(getString(R.string.test1)));
-		test1.setText(Html.fromHtml("<b> &lt;喀喀喀 &gt; </b> 换吧换吧 <\n>可以的"));
-//		test1.setText(getString(R.string.test1));
+		test1.setText(Html.fromHtml("<b> &lt;喀喀喀 &gt; </b> 换吧换吧 <\n>可以的" +
+				"<a href='http://baidu.com'>clickMe</a>"));
+		test2.setText(getString(R.string.test2));
 		
 	}
 	
@@ -187,6 +188,14 @@ public class MainActivity extends Activity {
 	void test11(){
 		
 		Intent intent = new Intent(this,PersonFragmentNew_.class);
+		startActivity(intent);
+		
+	}
+
+	@Click
+	void test12(){
+		
+		Intent intent = new Intent(this,SpannableActivity.class);
 		startActivity(intent);
 		
 	}
